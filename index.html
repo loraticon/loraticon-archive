@@ -2,165 +2,59 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Loraticon 아카이브</title>
   <style>
-    /* 기본 모바일 최적화 설정 */
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+    
     body {
       font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-      background-color: #FAFAFA; /* 부드러운 배경색 */
+      background-color: #FAFAFA;
       color: #333;
       margin: 0;
       padding: 0;
       display: flex;
       justify-content: center;
+      -webkit-font-smoothing: antialiased;
     }
     
-    .container {
+    .app-container {
       width: 100%;
-      max-width: 480px; /* 모바일 화면 너비 제한 */
+      max-width: 480px;
       background-color: #FFFBF9;
       min-height: 100vh;
-      padding: 30px 20px;
+      position: relative;
+      overflow-x: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      padding: 30px 20px 100px 20px;
       box-sizing: border-box;
     }
 
-    /* 프로필 섹션 */
-    .profile-section {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .profile-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border: 3px solid #fff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      margin-bottom: 15px;
-      object-fit: cover;
-    }
-    .profile-name {
-      font-size: 24px;
-      font-weight: 800;
-      margin: 0 0 10px 0;
-      color: #4A3E3D;
-    }
-    .profile-desc {
-      font-size: 14px;
-      color: #777;
-      line-height: 1.5;
-    }
+    .profile-section { text-align: center; margin-bottom: 24px; }
+    .profile-img { width: 100px; height: 100px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 15px; object-fit: cover; }
+    .profile-name { font-size: 24px; font-weight: 800; margin: 0 0 10px 0; color: #4A3E3D; }
+    .profile-desc { font-size: 14px; color: #777; line-height: 1.5; word-break: keep-all; }
 
-    /* 카테고리 타이틀 */
-    .section-title {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 15px;
-      color: #4A3E3D;
-      display: flex;
-      align-items: center;
-    }
+    .chip-container { display: flex; gap: 8px; overflow-x: auto; margin-bottom: 24px; padding-bottom: 4px; -ms-overflow-style: none; scrollbar-width: none; }
+    .chip-container::-webkit-scrollbar { display: none; }
+    .chip { flex: none; padding: 10px 20px; border-radius: 24px; font-size: 14px; font-weight: 700; cursor: pointer; border: none; transition: all 0.2s; }
+    .chip.active { background-color: #4A3E3D; color: #fff; }
+    .chip.inactive { background-color: #F0EBE9; color: #8A817F; }
+    .chip.inactive:hover { background-color: #E6DFDD; }
 
-    /* 2단 카드 그리드 레이아웃 (이미지와 동일한 스타일) */
-    .card-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 40px;
-    }
-    .card {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 12px;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-      transition: transform 0.2s ease;
-    }
-    .card:active {
-      transform: scale(0.98);
-    }
-    .card-img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      border-radius: 14px;
-      background-color: #f0f0f0; /* 이미지가 없을 때 임시 배경 */
-      object-fit: cover;
-      margin-bottom: 12px;
-    }
-    .card-badge {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      color: #FF7B7B;
-      background-color: #FFF0F0;
-      padding: 4px 8px;
-      border-radius: 8px;
-      margin-bottom: 6px;
-    }
-    .card-title {
-      font-size: 15px;
-      font-weight: 700;
-      margin: 0 0 6px 0;
-      line-height: 1.3;
-      word-break: keep-all;
-    }
-    .card-desc {
-      font-size: 12px;
-      color: #888;
-      line-height: 1.4;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card { background: #ffffff; border-radius: 20px; padding: 12px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.04); transition: transform 0.2s ease, box-shadow 0.2s; display: flex; flex-direction: column; text-decoration: none; }
+    .card:active { transform: scale(0.96); }
     
-    <div class="profile-section">
-      <img src="https://via.placeholder.com/100" alt="프로필" class="profile-img">
-      <h1 class="profile-name">Loraticon</h1>
-      <p class="profile-desc">
-        노션 템플릿 & 꾸미기 세트 아카이브에 오신 걸 환영합니다!<br>
-        원하시는 카테고리를 선택해 리틀리에서 다운로드 해보세요.
-      </p>
-    </div>
+    .card-img-wrapper { position: relative; width: 100%; aspect-ratio: 1 / 1; margin-bottom: 12px; }
+    .card-img { width: 100%; height: 100%; border-radius: 14px; background-color: #f0f0f0; object-fit: cover; }
+    
+    .price-badge { position: absolute; top: 8px; right: 8px; padding: 4px 8px; border-radius: 8px; font-size: 10px; font-weight: 800; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .price-free { background-color: #53C28B; color: #fff; }
+    .price-paid { background-color: #4A3E3D; color: #fff; }
 
-    <h2 class="section-title">📂 노션 템플릿</h2>
-    <div class="card-grid">
-      
-      <a href="여기에_리틀리_템플릿_링크를_넣어주세요" class="card" target="_blank">
-        <img src="https://via.placeholder.com/150" alt="템플릿 썸네일" class="card-img">
-        <span class="card-badge">템플릿</span>
-        <h3 class="card-title">스터디/경제 템플릿</h3>
-        <p class="card-desc">모든 공부에 적용 가능한 효율적인 스터디 노트</p>
-      </a>
+    .card-badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 4px 8px; border-radius: 8px; margin-bottom: 6px; align-self: flex-start; }
+    .badge-template { color: #FF7B7B; background-color: #FFF0F0; }
+    .badge-deco { color: #8A7BFF; background-color: #F0EFFF; }
 
-      <a href="여기에_리틀리_템플릿_링크를_넣어주세요" class="card" target="_blank">
-        <img src="https://via.placeholder.com/150" alt="템플릿 썸네일" class="card-img">
-        <span class="card-badge">템플릿</span>
-        <h3 class="card-title">연구 노트 템플릿</h3>
-        <p class="card-desc">체계적인 논문 및 자료 정리를 위한 템플릿</p>
-      </a>
-      
-    </div>
-
-    <h2 class="section-title">✨ 노션 꾸미기 세트</h2>
-    <div class="card-grid">
-      
-      <a href="여기에_리틀리_꾸미기_링크를_넣어주세요" class="card" target="_blank">
-        <img src="https://via.placeholder.com/150" alt="꾸미기 썸네일" class="card-img">
-        <span class="card-badge">꾸미기</span>
-        <h3 class="card-title">봄맞이 동숲 테마</h3>
-        <p class="card-desc">산뜻한 봄기운이 가득한 노션 꾸미기 세트</p>
-      </a>
-
-      </div>
-
-  </div>
-
-</body>
-</html>
+    .card-title {
