@@ -57,4 +57,154 @@
     .badge-template { color: #FF7B7B; background-color: #FFF0F0; }
     .badge-deco { color: #8A7BFF; background-color: #F0EFFF; }
 
-    .card-title {
+    .card-title { font-size: 15px; font-weight: 700; margin: 0 0 6px 0; line-height: 1.3; word-break: keep-all; color: #333; }
+    .card-desc { font-size: 12px; color: #888; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin: 0; }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <div class="profile-section">
+      <img src="./images/profile/profile-logo.png" onerror="this.src='https://via.placeholder.com/150'" alt="프로필" class="profile-img">
+      <h1 class="profile-name">Loraticon</h1>
+      <p class="profile-desc">
+        찾기 힘들었던 노션 시리즈를 정리한 페이지입니다.
+      </p>
+    </div>
+
+    <div class="chip-container">
+      <button onclick="setCategory('template')" id="tab-template" class="chip active">📂 노션 템플릿</button>
+      <button onclick="setCategory('deco')" id="tab-deco" class="chip inactive">✨ 노션 꾸미기 세트</button>
+    </div>
+
+    <div class="card-grid" id="itemGrid"></div>
+
+  </div>
+
+  <script>
+    // 🌟 상품 목록 데이터 (pageUrl 항목이 추가되었습니다!)
+    const items = [
+      {
+        id: 1,
+        category: 'template',
+        title: '투두리스트',
+        desc: '여러 프로젝트의 할일을 한 곳에서 관리할 수 있는 투두리스트',
+        image: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=500&q=80',
+        isFree: true,
+        pageUrl: 'detail.html' // 👈 [중요] 연결될 상세페이지 HTML 파일 이름
+      },
+      {
+        id: 2,
+        category: 'template',
+        title: '연구 노트',
+        desc: '연구생과 함께 만든 연구일지 시스템',
+        image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=500&q=80',
+        isFree: true, 
+        pageUrl: 'detail-grad.html' // 나중에 만들 다른 상세페이지 이름
+      },
+      {
+        id: 3,
+        category: 'template',
+        title: '100일 챌린지',
+        desc: '일상의 작은 실천을 쌓는 100일 챌린지',
+        image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=500&q=80',
+        isFree: true, 
+        pageUrl: 'detail-grad.html' // 나중에 만들 다른 상세페이지 이름
+      },
+      {
+        id: 4,
+        category: 'template',
+        title: '루틴 플래너',
+        desc: '시간표와 그날의 기록을 남길 수 있는 루틴 플래너',
+        image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=500&q=80',
+        isFree: true, 
+        pageUrl: 'detail-grad.html' // 나중에 만들 다른 상세페이지 이름
+      },
+      {
+        id: 5,
+        category: 'template',
+        title: '행복 줍줍 노트',
+        desc: '오늘의 행복을 간단하게 작성할 수 있는 감사 일기',
+        image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=500&q=80',
+        isFree: true, 
+        pageUrl: 'detail-grad.html' // 나중에 만들 다른 상세페이지 이름
+      },
+      {
+        id: 6,
+        category: 'template',
+        title: '데일리 픽',
+        desc: '가볍게 쓸 수 있는 일기 다이어리',
+        image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=500&q=80',
+        isFree: true, 
+        pageUrl: 'detail-grad.html' // 나중에 만들 다른 상세페이지 이름
+      },
+      {
+        id: 7,
+        category: 'template',
+        title: '연말 회고록',
+        desc: '연말결산으로 한 해를 차분하게 정리',
+        image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=500&q=80',
+        isFree: true, 
+        pageUrl: 'detail-grad.html' // 나중에 만들 다른 상세페이지 이름
+      },
+
+      {
+        id: 10,
+        category: 'deco',
+        title: '포근한 봄날의 동숲 테마',
+        desc: '딱딱한 노션을 산뜻하게 바꿔줄 아이콘, 커버 이미지, 구분선 세트입니다.',
+        image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=500&q=80',
+        isFree: true,
+        pageUrl: 'detail-animal.html'
+      }
+    ];
+
+    let currentCategory = 'template';
+
+    function setCategory(category) {
+      currentCategory = category;
+      const tabTemplate = document.getElementById('tab-template');
+      const tabDeco = document.getElementById('tab-deco');
+      
+      if (category === 'template') {
+        tabTemplate.className = 'chip active';
+        tabDeco.className = 'chip inactive';
+      } else {
+        tabDeco.className = 'chip active';
+        tabTemplate.className = 'chip inactive';
+      }
+      renderGrid();
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById('itemGrid');
+      grid.innerHTML = '';
+      const filteredItems = items.filter(item => item.category === currentCategory);
+
+      filteredItems.forEach(item => {
+        const badgeClass = item.category === 'template' ? 'badge-template' : 'badge-deco';
+        const typeText = item.category === 'template' ? '템플릿' : '꾸미기';
+        const priceClass = item.isFree ? 'price-free' : 'price-paid';
+        const priceText = item.isFree ? 'FREE' : 'PREMIUM';
+
+        // div 대신 a 태그를 사용하여 href로 페이지 이동
+        const cardHTML = `
+          <a href="${item.pageUrl}" class="card">
+            <div class="card-img-wrapper">
+              <img src="${item.image}" alt="${item.title}" class="card-img">
+              <div class="price-badge ${priceClass}">${priceText}</div>
+            </div>
+            <span class="card-badge ${badgeClass}">${typeText}</span>
+            <h3 class="card-title">${item.title}</h3>
+            <p class="card-desc">${item.desc}</p>
+          </a>
+        `;
+        grid.innerHTML += cardHTML;
+      });
+    }
+
+    renderGrid();
+  </script>
+</body>
+</html>
