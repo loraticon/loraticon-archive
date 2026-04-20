@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연말 회고록 템플릿 - Loraticon</title>
+    <!-- Tailwind CSS (디자인 시스템) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.260.0/lucide.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #FAFAF9; 
+            color: #292524;
+        }
+        /* 스크롤바 숨기기 */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .scroll-smooth { scroll-behavior: smooth; }
+        /* FAQ 애니메이션 */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: slideDown 0.3s ease-in-out; }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-stone-200 selection:text-stone-900 pb-24">
+
+    <!-- 네비게이션 바 -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
+        <div class="max-w-4xl mx-auto px-4 h-14 flex justify-between items-center">
+            <!-- 뒤로가기 버튼: 클릭 시 index.html로 이동 -->
+            <a href="index.html" class="flex items-center gap-1.5 cursor-pointer text-stone-500 hover:text-stone-800 transition font-medium">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i> 뒤로가기
+            </a>
+            <div class="font-bold text-lg text-stone-800">연말 회고록 템플릿</div>
+            <div class="w-20"></div> <!-- 중앙 정렬을 위한 여백 -->
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 bg-white shadow-sm min-h-screen">
+        
+        <!-- 1. 헤더: 타이틀, 난이도, 다운로드, 태그 -->
+        <header class="text-center mb-12">
+            <div class="flex flex-wrap justify-center gap-2 mb-6">
+                <span class="px-3 py-1 bg-stone-100 text-stone-500 text-sm font-bold rounded-md">#연말회고</span>
+                <span class="px-3 py-1 bg-stone-100 text-stone-500 text-sm font-bold rounded-md">#연말결산</span>
+                <span class="px-3 py-1 bg-stone-100 text-stone-500 text-sm font-bold rounded-md">#자기계발</span>
+                <span class="px-3 py-1 bg-stone-100 text-stone-500 text-sm font-bold rounded-md">#기록</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-stone-900 mb-10 word-keep">연말 회고록 템플릿</h1>
+
+            <p class="text-base sm:text-lg text-stone-600 mb-8 max-w-2xl mx-auto leading-relaxed word-keep">
+                한 해의 흐름을 차분히 돌아보며 나만의 연말결산 기록으로 남겨보세요.<br class="hidden sm:block">
+                올해도, 내년에도, 내후년에도 계속해서 쓸 수 있도록 구성했습니다.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-green-50 text-green-700 rounded-full border border-green-100 font-medium text-sm">
+                    <span class="flex items-center">난이도 <i data-lucide="star" class="w-4 h-4 ml-1 fill-green-500 text-green-500"></i><!-- <i data-lucide="star" class="w-4 h-4 ml-1 text-green-200"></i><i data-lucide="star" class="w-4 h-4 ml-1 text-green-200"></i><i data-lucide="star" class="w-4 h-4 ml-1 text-green-200"></i><i data-lucide="star" class="w-4 h-4 ml-1 text-green-200"></i>!--></span>
+                    <span class="w-px h-3 bg-green-200"></span>
+                    <span>노션 초보자도 쉽게 사용할 수 있어요</span>
+                </div>
+
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-stone-50 text-stone-600 rounded-full border border-stone-200 font-medium text-sm">
+                    <div class="flex gap-1">
+                        <span class="w-5 h-5 bg-stone-800 text-white rounded-[4px] flex items-center justify-center text-[10px] font-bold">N</span>
+                    </div>
+                    <span>누적 다운로드</span>
+                    <span class="font-extrabold text-stone-800">200+</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. 아이패드 목업 이미지 영역 -->
+        <section class="mb-20 px-2 sm:px-0">
+            <div class="relative max-w-2xl mx-auto">
+                <div class="relative border-[10px] sm:border-[16px] border-stone-800 rounded-[1.5rem] sm:rounded-[2.5rem] shadow-2xl aspect-[4/3] bg-stone-800">
+                    <div class="absolute top-1/2 -left-2 sm:-left-4 -translate-y-1/2 w-1 sm:w-2 h-10 sm:h-12 bg-stone-900 rounded-r-md z-10"></div>
+                    <div class="absolute top-10 -right-2 sm:-right-4 w-1 sm:w-2 h-8 sm:h-10 bg-stone-900 rounded-l-md z-10"></div>
+                    <div class="w-full h-full overflow-hidden rounded-[14px] sm:rounded-[24px] bg-stone-100">
+                        <img src="./images/template/year-end-review/slide1.webp" onerror="this.src='https://placehold.co/800x600/f5f5f4/292524?text=[Image+of+연말회고록+메인+화면]'" alt="템플릿 상세 이미지" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <p class="text-center text-sm text-stone-400 mt-5 flex items-center justify-center gap-1.5">
+                    <i data-lucide="monitor-smartphone" class="w-4 h-4"></i> 데스크톱, 태블릿에서 쉽게 사용해 보세요.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2.5 공감 체크리스트 영역 -->
+        <section class="mb-20 max-w-2xl mx-auto">
+            <div class="bg-stone-50 border border-stone-200 rounded-[2rem] p-8 sm:p-10 shadow-sm">
+                <h2 class="text-xl sm:text-2xl font-bold text-stone-900 mb-8 text-center">이런 분들에게 도움이 될 수 있어요</h2>
+                <div class="space-y-6 max-w-lg mx-auto">
+                    <label class="flex items-start gap-4 cursor-pointer group">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-stone-500 flex items-center justify-center shrink-0 mt-0.5 group-hover:border-stone-400 transition-colors">
+                            <i data-lucide="check" class="w-4 h-4 text-stone-800 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <span class="text-stone-700 text-sm sm:text-base leading-relaxed break-keep">
+                            연말 회고를 쓰고 싶지만, <strong class="text-stone-900">막상 어디서부터 시작해야 할지 몰라 매번 미루게 돼요.</strong>
+			</span>
+                    </label>
+                    <label class="flex items-start gap-4 cursor-pointer group">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-stone-500 flex items-center justify-center shrink-0 mt-0.5 group-hover:border-stone-400 transition-colors">
+                            <i data-lucide="check" class="w-4 h-4 text-stone-800 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <span class="text-stone-700 text-sm sm:text-base leading-relaxed break-keep">
+                            바쁘게 지나간 한 해, <strong class="text-stone-900">올해 나는 무엇을 했고 어떤 감정을 느꼈는지</strong> 차분히 정리하고 싶어요.
+			</span>
+                    </label>
+                    <label class="flex items-start gap-4 cursor-pointer group">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-stone-500 flex items-center justify-center shrink-0 mt-0.5 group-hover:border-stone-400 transition-colors">
+                            <i data-lucide="check" class="w-4 h-4 text-stone-800 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <span class="text-stone-700 text-sm sm:text-base leading-relaxed break-keep">
+                            매년 새로운 템플릿을 찾을 필요 없이, <strong class="text-stone-900">내년에도 내후년에도 계속 쓸 수 있는</strong> 기록 공간이 필요해요.
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 주요기능 -->
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-stone-900 mb-10 text-center flex items-center justify-center gap-2">
+                <i data-lucide="sparkles" class="text-stone-800 w-6 h-6"></i> 주요 기능
+            </h2>
+            <div class="relative max-w-xl mx-auto pl-2">
+                <div class="absolute left-8 top-6 bottom-6 w-1 bg-stone-200 rounded-full"></div>
+                <div class="space-y-12">
+                    <!-- 기능 1 -->
+                    <div class="relative flex items-start gap-4 sm:gap-6 w-full">
+                        <div class="w-12 h-12 rounded-full bg-stone-800 text-white font-extrabold flex items-center justify-center shadow-md z-10 shrink-0">1</div>
+                        <div class="bg-white border border-stone-200 rounded-2xl flex-1 min-w-0 w-full shadow-sm hover:shadow-lg transition overflow-hidden">
+                            <div class="aspect-video bg-stone-100 w-full">
+                                <img src="./images/template/year-end-review/feat1.webp" onerror="this.src='https://placehold.co/600x338/f5f5f4/292524?text=[Image+of+1월부터+12월까지+월별+회고+카드]'" alt="월별 회고 리스트" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg font-bold text-stone-800 mb-2">1월부터 12월까지 월별 회고</h3>
+                                <p class="text-stone-600 text-sm leading-relaxed break-keep">1월부터 12월까지의 회고록을 각각의 카드 형태로 작성할 수 있습니다.</br>길게 쓰지 않아도 충분히 의미 있는 기록이 쌓이도록 구성을 단순하게 잡았습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 기능 2 -->
+                    <div class="relative flex items-start gap-4 sm:gap-6 w-full">
+                        <div class="w-12 h-12 rounded-full bg-stone-800 text-white font-extrabold flex items-center justify-center shadow-md z-10 shrink-0">2</div>
+                        <div class="bg-white border border-stone-200 rounded-2xl flex-1 min-w-0 w-full shadow-sm hover:shadow-lg transition overflow-hidden">
+                            <div class="aspect-video bg-stone-100 w-full">
+                                <img src="./images/template/year-end-review/feat2.webp" onerror="this.src='https://placehold.co/600x338/f5f5f4/292524?text=[Image+of+올해의+성취+등+질문+키워드]'" alt="연말 회고 질문 키워드" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg font-bold text-stone-800 mb-2">막막함을 없애줄 14개의 질문 키워드</h3>
+                                <p class="text-stone-600 text-sm leading-relaxed break-keep">회고가 처음인 분들도 쉽게 시작할 수 있도록 '올해의 성취', '올해의 감사' 등 14개의 질문 키워드를 담았습니다.</br>원하는 질문을 자유롭게 추가하거나 커스텀할 수도 있어요.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 기능 3 -->
+                    <div class="relative flex items-start gap-4 sm:gap-6 w-full">
+                        <div class="w-12 h-12 rounded-full bg-stone-800 text-white font-extrabold flex items-center justify-center shadow-md z-10 shrink-0">3</div>
+                        <div class="bg-white border border-stone-200 rounded-2xl flex-1 min-w-0 w-full shadow-sm hover:shadow-lg transition overflow-hidden">
+                            <div class="aspect-video bg-stone-100 w-full">
+                                <img src="./images/template/year-end-review/feat3.webp" onerror="this.src='https://placehold.co/600x338/f5f5f4/292524?text=[Image+of+새로운+해+회고+자동+생성+버튼]'" alt="새로운 해 자동 생성 버튼" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg font-bold text-stone-800 mb-2">매년 새로 쓸 수 있는 자동 생성 버튼</h3>
+                                <p class="text-stone-600 text-sm leading-relaxed break-keep">새로운 해가 되었을 때, '추가' 버튼을 한 번만 클릭하세요.</br>올해의 회고 리스트와 질문 폼이 자동으로 생성되어 매년 지속적으로 기록을 이어갈 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 기능 4 -->
+                    <div class="relative flex items-start gap-4 sm:gap-6 w-full">
+                        <div class="w-12 h-12 rounded-full bg-stone-800 text-white font-extrabold flex items-center justify-center shadow-md z-10 shrink-0">4</div>
+                        <div class="bg-white border border-stone-200 rounded-2xl flex-1 min-w-0 w-full shadow-sm hover:shadow-lg transition overflow-hidden">
+                            <div class="aspect-video bg-stone-100 w-full">
+                                <img src="./images/template/year-end-review/feat4.webp" onerror="this.src='https://placehold.co/600x338/f5f5f4/292524?text=[Image+of+나에게+건네는+한마디+작성+영역]'" alt="나에게 건네는 한마디" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg font-bold text-stone-800 mb-2">올해의 다짐</h3>
+                                <p class="text-stone-600 text-sm leading-relaxed break-keep">매년 새롭게 세우는 목표와 마음가짐을 연도별로 모아볼 수 있는 공간입니다.</br>시간이 지나고 다시 읽었을 때 더 큰 의미로 다가올 거예요.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 가이드 안내 -->
+        <section class="mb-20">
+            <div class="bg-stone-100 border border-stone-200 rounded-3xl p-8 flex flex-col items-center text-center max-w-2xl mx-auto">
+                <div class="flex gap-2 mb-4">
+                    <div class="w-10 h-10 bg-white rounded-lg shadow-sm flex items-center justify-center text-stone-800">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-stone-800 mb-2">템플릿 사용 가이드 제공</h3>
+                <p class="text-stone-600 text-sm break-keep">노션이 처음이신가요?</br> 복제 방법부터 상세한 사용법, 커스텀 방법까지 친절하게 설명된</br> 가이드북 페이지가 템플릿 내부에 포함되어 있습니다.</br> 걱정 말고 시작하세요!</p>
+            </div>
+        </section>
+
+        <!-- 5. 사용자 리뷰 (마켓플레이스 & 설문조사 링크) -->
+        <section class="border-t border-stone-100 pt-16 mb-20">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-stone-900 mb-2">함께 성장하고 있는 분들의 리뷰</h2>
+                <div class="flex items-center justify-center gap-2 mb-2">
+                    <div class="flex text-amber-400">
+                        <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+                    </div>
+                    <span class="text-stone-800 font-extrabold text-lg">5.0</span>
+                    <span class="text-stone-500 text-sm">(3개의 리뷰)</span>
+                </div>
+            </div>
+
+            <div class="bg-stone-50 border border-stone-200 rounded-3xl p-8 text-center max-w-2xl mx-auto shadow-sm">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm border border-stone-100">
+                    <i data-lucide="heart-handshake" class="w-8 h-8 text-amber-500"></i>
+                </div>
+                
+                <!-- 수정된 문구 -->
+                <h3 class="text-lg font-bold text-stone-800 mb-2">여러분의 소중한 후기를 기다려요 🥲</h3>
+                <p class="text-stone-600 text-sm mb-8 leading-relaxed break-keep">
+                    아직 등록된 리뷰가 많지 않아요.</br> 템플릿을 직접 사용해 보시고 느낀 점을 편하게 들려주시겠어요?<br class="hidden sm:block">
+                    여러분의 솔직한 피드백이 더 나은 템플릿을 만드는 데 아주 큰 힘이 됩니다.
+                </p>
+                
+                <!-- 버튼 영역 -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="여기에_설문조사_링크_입력" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-stone-800 text-white font-bold rounded-xl hover:bg-stone-700 transition shadow-sm w-full sm:w-auto">
+                        <i data-lucide="edit-3" class="w-4 h-4"></i> 1분 설문으로 의견 남기기
+                    </a>
+                    <a href="https://www.notion.com/ko/templates" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white border border-stone-200 text-stone-700 font-bold rounded-xl hover:bg-stone-50 hover:text-stone-900 transition shadow-sm w-full sm:w-auto">
+                        마켓플레이스 리뷰 보기 <i data-lucide="external-link" class="w-4 h-4 text-stone-400"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. 자주 묻는 질문 (FAQ) -->
+        <section class="border-t border-stone-100 pt-16 mb-20">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-stone-900 mb-2">자주 묻는 질문 (FAQ)</h2>
+                <p class="text-stone-500 text-sm">다운로드 전 궁금하신 점을 미리 확인해 보세요.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4">
+                <!-- 🌟 복제 방법 안내 (고정 영역) -->
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-stone-800">Q.</span> 템플릿 복제는 어떻게 하나요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <div class="flex items-start gap-1">
+                            <span class="text-stone-600 font-bold">A.</span>
+                            <div class="space-y-2 flex-1 mt-0.5">
+                                <p>다운로드 받으신 <strong>PDF 파일</strong>을 열고, 첫 번째 버튼을 클릭하면 템플릿 페이지로 바로 이동합니다.
+                                노션(Notion)에 로그인하신 후, 우측 상단에 있는 <strong>'복제(Duplicate)'</strong> 아이콘을 클릭하시면 내 워크스페이스로 즉시 복사됩니다.
+                                <p class="text-stone-500 text-xs pt-2">더 자세한 과정이 궁금하시다면 아래 버튼을 눌러 네이버 블로그의 상세 가이드를 확인해 보세요!</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 네이버 블로그 가이드 링크 버튼 -->
+                        <div class="mt-5 sm:ml-5">
+                            <a href="여기에_네이버_블로그_링크_입력" target="_blank" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white border border-stone-200 text-stone-700 font-bold rounded-lg hover:bg-stone-50 hover:text-[#03C75A] hover:border-[#03C75A]/30 transition shadow-sm text-sm w-full sm:w-auto group/btn">
+                                <span class="w-4 h-4 bg-[#03C75A] text-white rounded-[4px] flex items-center justify-center text-[10px] font-extrabold transition-transform group-hover/btn:scale-110">N</span>
+                                네이버 블로그에서 상세 가이드 보기 <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-stone-800">Q.</span> 노션 무료 요금제에서도 사용 가능한가요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-stone-800 font-bold mr-1">A.</span>  네 🥰 이 템플릿은 노션 개인 무료(Free) 요금제에서도 100% 원활하게 작동하도록 설계되었습니다.
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-stone-800">Q.</span> 상업적 용도로 사용할 수 있나요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-stone-800 font-bold mr-1">A.</span> 개인용으로만 사용하실 수 있으며, 상업적 용도로는 사용하실 수 없습니다.
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- 7. 관련 블로그 글 영역 -->
+        <section class="border-t border-stone-100 pt-16">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-stone-900 mb-2">이 템플릿과 관련된 글을 읽어보세요</h2>
+                    <p class="text-stone-500 text-sm">템플릿과 관련된 유용한 꿀팁과 사용기들을 확인할 수 있어요✨</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <!-- 글 1 -->
+                <a href="https://m.blog.naver.com/loraticon/224131656960" target="_blank" class="group block">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                        <img src="./images/template/year-end-review/blog1.webp" onerror="this.src='https://placehold.co/400x300/f5f5f4/292524?text=[Image+of+연말결산+다이어리]'" alt="블로그 글 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="px-2 py-0.5 bg-green-50 text-green-600 border border-green-100 rounded text-[10px] font-bold">N 블로그</span>
+                        <span class="px-2 py-0.5 bg-stone-50 text-stone-500 border border-stone-200 rounded text-[10px] font-bold">사용 방법</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 group-hover:text-stone-500 transition line-clamp-2 mb-1">연말결산으로 한 해를 차분히 정리하기</h3>
+                    <p class="text-xs text-stone-500 line-clamp-2">노션 연말 회고록 템플릿 공유 및 상세 사용법을 안내합니다.</p>
+                </a>
+                <!-- 글 2 -->
+                <a href="#" target="_blank" class="group block">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                        <img src="./images/template/year-end-review/blog2.webp" onerror="this.src='https://placehold.co/400x300/f5f5f4/292524?text=[Image+of+따뜻한+커피와+노트북]'" alt="블로그 글 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="px-2 py-0.5 bg-green-50 text-green-600 border border-green-100 rounded text-[10px] font-bold">N 블로그</span>
+                        <span class="px-2 py-0.5 bg-stone-50 text-stone-500 border border-stone-200 rounded text-[10px] font-bold">사용 후기</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 group-hover:text-stone-500 transition line-clamp-2 mb-1">2025년 연말결산｜연말 회고록 노션 템플릿 사용 후기</h3>
+                    <p class="text-xs text-stone-500 line-clamp-2">제작자가 직접 기록해본 25년 연말 회고록.</p>
+                </a>
+                <!-- 글 3
+                <a href="#" target="_blank" class="group block">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                        <img src="./images/template/year-end-review/blog3.webp" onerror="this.src='https://placehold.co/400x300/f5f5f4/292524?text=[Image+of+새해+다이어리+기록]'" alt="블로그 글 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="px-2 py-0.5 bg-green-50 text-green-600 border border-green-100 rounded text-[10px] font-bold">N 블로그</span>
+                        <span class="px-2 py-0.5 bg-stone-50 text-stone-500 border border-stone-200 rounded text-[10px] font-bold">노션 꿀팁</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 group-hover:text-stone-500 transition line-clamp-2 mb-1">연말 회고를 바탕으로 새해 목표 세우는 법</h3>
+                    <p class="text-xs text-stone-500 line-clamp-2">작년의 기록을 바탕으로 더 나은 한 해를 계획하는 노하우</p>
+                </a>-->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 하단 고정 다운로드 버튼 (Sticky CTA) -->
+    <div class="fixed bottom-0 left-0 w-full bg-white border-t border-stone-200 p-3 sm:p-4 z-50 shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.05)]">
+        <div class="max-w-3xl mx-auto flex justify-between items-center gap-4">
+            <div class="hidden sm:block">
+                <p class="text-stone-500 text-xs font-bold mb-1">연말 회고록 템플릿</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 bg-stone-100 text-stone-600 rounded text-[10px] font-bold border border-stone-200">무료 배포중</span>
+                    <p class="text-xl font-extrabold text-stone-900">FREE</p>
+                </div>
+            </div>
+            <div class="flex gap-2 w-full sm:w-auto">
+                <button onclick="this.classList.toggle('text-rose-500'); this.classList.toggle('bg-rose-50'); this.classList.toggle('border-rose-200'); this.querySelector('svg').classList.toggle('fill-current');" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white border border-stone-200 text-stone-400 flex items-center justify-center hover:bg-rose-50 hover:text-rose-500 transition shrink-0" title="찜하기">
+                    <i data-lucide="heart" class="w-5 h-5"></i>
+                </button>
+                <a href="./files/연말회고록_템플릿.pdf" download class="flex-1 sm:w-64 h-12 sm:h-14 bg-stone-900 text-white rounded-xl font-bold text-base hover:bg-stone-800 transition shadow-lg flex items-center justify-center gap-2 px-1">
+    <i data-lucide="download" class="w-5 h-5"></i> 지금 무료로 다운받기
+		</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

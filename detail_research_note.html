@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연구 노트 템플릿 - Loraticon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.260.0/lucide.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #FAFAF9; 
+            color: #292524;
+        }
+        /* 스크롤바 숨기기 */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .scroll-smooth { scroll-behavior: smooth; }
+        /* FAQ 애니메이션 */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: slideDown 0.3s ease-in-out; }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-emerald-200 selection:text-emerald-900 pb-24">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
+        <div class="max-w-4xl mx-auto px-4 h-14 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-1.5 cursor-pointer text-stone-500 hover:text-stone-800 transition font-medium">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i> 뒤로가기
+            </a>
+            <div class="font-bold text-lg text-stone-800">연구 노트 템플릿</div>
+            <div class="w-20"></div> </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 bg-white shadow-sm min-h-screen">
+        
+        <header class="text-center mb-12">
+            <div class="flex flex-wrap justify-center gap-2 mb-6">
+                <span class="px-3 py-1 bg-stone-100 text-stone-500 text-sm font-bold rounded-md">#연구노트</span>
+                <span class="px-3 py-1 bg-stone-100 text-stone-500 text-sm font-bold rounded-md">#대학원생</span>
+                <span class="px-3 py-1 bg-stone-100 text-stone-500 text-sm font-bold rounded-md">#논문아카이브</span>
+                <span class="px-3 py-1 bg-stone-100 text-stone-500 text-sm font-bold rounded-md">#프로젝트관리</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-stone-900 mb-10 word-keep">연구 노트 템플릿</h1>
+
+            <p class="text-base sm:text-lg text-stone-600 mb-8 max-w-2xl mx-auto leading-relaxed word-keep">
+                흩어진 연구 자료와 일정을 하나로 모아주는 체계적인 연구일지 시스템입니다.<br class="hidden sm:block">
+                진행 중인 여러 연구 프로젝트의 세부 진행 상황을 파악하고,</br> 논문과 데이터를 유기적으로 연결하세요.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-50 text-yellow-700 rounded-full border border-yellow-100 font-medium text-sm">
+                    <span class="flex items-center">난이도 
+                        <i data-lucide="star" class="w-4 h-4 ml-1 fill-yellow-500 text-yellow-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 text-yellow-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-500 text-yellow-500"></i>
+                    </span>
+                    <span class="w-px h-3 bg-yellow-200"></span>
+                    <span>관계형과 롤업을 숙지한 중급자에게 추천해요</span>
+                </div>
+
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-stone-50 text-stone-600 rounded-full border border-stone-200 font-medium text-sm">
+                    <div class="flex gap-1">
+                        <span class="w-5 h-5 bg-stone-800 text-white rounded-[4px] flex items-center justify-center text-[10px] font-bold">N</span>
+                    </div>
+                    <span>누적 다운로드</span>
+                    <span class="font-extrabold text-stone-800">2,100+</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="mb-20 px-2 sm:px-0">
+            <div class="relative max-w-2xl mx-auto">
+                <div class="relative border-[10px] sm:border-[16px] border-stone-800 rounded-[1.5rem] sm:rounded-[2.5rem] shadow-2xl aspect-[4/3] bg-stone-800">
+                    <div class="absolute top-1/2 -left-2 sm:-left-4 -translate-y-1/2 w-1 sm:w-2 h-10 sm:h-12 bg-stone-900 rounded-r-md z-10"></div>
+                    <div class="absolute top-10 -right-2 sm:-right-4 w-1 sm:w-2 h-8 sm:h-10 bg-stone-900 rounded-l-md z-10"></div>
+                    <div class="w-full h-full overflow-hidden rounded-[14px] sm:rounded-[24px] bg-stone-100">
+                        <img src="./images/template/research-note/slide1.webp" onerror="this.src='https://placehold.co/800x600/ecfdf5/065f46?text=[Image+of+연구노트+아이패드+가로화면]'" alt="템플릿 상세 이미지" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <p class="text-center text-sm text-stone-400 mt-5 flex items-center justify-center gap-1.5">
+                    <i data-lucide="monitor-smartphone" class="w-4 h-4"></i> 데스크톱, 태블릿에서 쉽게 사용해 보세요.
+                </p>
+            </div>
+        </section>
+
+        <section class="mb-20 max-w-2xl mx-auto">
+            <div class="bg-emerald-50/50 border border-emerald-100 rounded-[2rem] p-8 sm:p-10 shadow-sm">
+                <h2 class="text-xl sm:text-2xl font-bold text-stone-900 mb-8 text-center">이런 분들에게 도움이 될 수 있어요</h2>
+                <div class="space-y-6 max-w-lg mx-auto">
+                    <label class="flex items-start gap-4 cursor-pointer group">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-emerald-200 flex items-center justify-center shrink-0 mt-0.5 group-hover:border-emerald-400 transition-colors">
+                            <i data-lucide="check" class="w-4 h-4 text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <span class="text-stone-700 text-sm sm:text-base leading-relaxed break-keep">
+                            여러 개의 실험과 프로젝트를 동시에 진행하다 보니, <strong class="text-stone-900">자료와 일정이 뒤죽박죽 섞여 관리가 어려워요.</strong>
+			</span>
+                    </label>
+                    <label class="flex items-start gap-4 cursor-pointer group">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-emerald-200 flex items-center justify-center shrink-0 mt-0.5 group-hover:border-emerald-400 transition-colors">
+                            <i data-lucide="check" class="w-4 h-4 text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <span class="text-stone-700 text-sm sm:text-base leading-relaxed break-keep">
+                            단순한 기록을 넘어, <strong class="text-stone-900">읽은 논문이나 서적을 아카이빙하고 내 연구 아이디어와 유기적으로 연결</strong>하고 싶어요.
+			</span>
+                    </label>
+                    <label class="flex items-start gap-4 cursor-pointer group">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-emerald-200 flex items-center justify-center shrink-0 mt-0.5 group-hover:border-emerald-400 transition-colors">
+                            <i data-lucide="check" class="w-4 h-4 text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <span class="text-stone-700 text-sm sm:text-base leading-relaxed break-keep">
+                            주기적인 <strong class="text-stone-900">랩미팅 내용과 진행해야 할 실험 투두리스트를 일정과 연동</strong>해서 한 번에 관리하고 싶어요.
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-stone-900 mb-10 text-center flex items-center justify-center gap-2">
+                <i data-lucide="sparkles" class="text-emerald-500 w-6 h-6"></i> 핵심 기능 소개
+            </h2>
+            <div class="relative max-w-xl mx-auto pl-2">
+                <div class="absolute left-8 top-6 bottom-6 w-1 bg-emerald-100 rounded-full"></div>
+                <div class="space-y-12">
+                    <div class="relative flex items-start gap-4 sm:gap-6 w-full">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500 text-white font-extrabold flex items-center justify-center shadow-md z-10 shrink-0">1</div>
+                        <div class="bg-white border border-stone-200 rounded-2xl flex-1 min-w-0 w-full shadow-sm hover:shadow-lg transition overflow-hidden">
+                            <div class="aspect-video bg-stone-100 w-full">
+                                <img src="./images/template/research-note/feat1.webp" onerror="this.src='https://placehold.co/600x338/d1fae5/059669?text=[Image+of+연구+프로젝트+현황]'" alt="연구 프로젝트 통합 관리" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg font-bold text-stone-800 mb-2">한눈에 파악하는 연구 프로젝트</h3>
+                                <p class="text-stone-600 text-sm leading-relaxed break-keep">진행 중인 여러 연구 프로젝트의 기간과 세부 진행 상황을 직관적으로 파악할 수 있어요. 프로젝트별 목표 설정과 실험 진행도를 한 곳에서 모니터링하세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative flex items-start gap-4 sm:gap-6 w-full">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500 text-white font-extrabold flex items-center justify-center shadow-md z-10 shrink-0">2</div>
+                        <div class="bg-white border border-stone-200 rounded-2xl flex-1 min-w-0 w-full shadow-sm hover:shadow-lg transition overflow-hidden">
+                            <div class="aspect-video bg-stone-100 w-full">
+                                <img src="./images/template/research-note/feat2.gif" onerror="this.src='https://placehold.co/600x338/f0fdf4/16a34a?text=[Image+of+데이터베이스+관계형+구조]'" alt="관계형 데이터베이스 활용" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg font-bold text-stone-800 mb-2">유기적으로 연결되는 연구 노트</h3>
+                                <p class="text-stone-600 text-sm leading-relaxed break-keep">데이터베이스 관계형을 활용해서	 진행 중인 프로젝트, 참고한 문헌, 떠오른 아이디어, 관련된 미팅 일정을 유기적으로 연결하여 중복 입력을 최소화합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative flex items-start gap-4 sm:gap-6 w-full">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500 text-white font-extrabold flex items-center justify-center shadow-md z-10 shrink-0">3</div>
+                        <div class="bg-white border border-stone-200 rounded-2xl flex-1 min-w-0 w-full shadow-sm hover:shadow-lg transition overflow-hidden">
+                            <div class="aspect-video bg-stone-100 w-full">
+                                <img src="./images/template/research-note/feat3.webp" onerror="this.src='https://placehold.co/600x338/fffbeb/d97706?text=[Image+of+문헌+키워드+아카이브]'" alt="문헌 및 키워드 아카이브" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg font-bold text-stone-800 mb-2">문헌 및 핵심 키워드 아카이브</h3>
+                                <p class="text-stone-600 text-sm leading-relaxed break-keep">참고 문헌, 논문, 서적 등의 정보를 종류별로 아카이빙합니다.</br>
+				핵심 키워드를 태그해두면 서로 다른 프로젝트라도 키워드를 중심으로 관련 논문과 자료를 쉽게 꺼내볼 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative flex items-start gap-4 sm:gap-6 w-full">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500 text-white font-extrabold flex items-center justify-center shadow-md z-10 shrink-0">4</div>
+                        <div class="bg-white border border-stone-200 rounded-2xl flex-1 min-w-0 w-full shadow-sm hover:shadow-lg transition overflow-hidden">
+                            <div class="aspect-video bg-stone-100 w-full">
+                                <img src="./images/template/research-note/feat4.webp" onerror="this.src='https://placehold.co/600x338/ecfeff/0891b2?text=[Image+of+캘린더와+랩미팅+연동]'" alt="캘린더 및 랩미팅 연동" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg font-bold text-stone-800 mb-2">연구 일정 및 랩미팅 연동</h3>
+                                <p class="text-stone-600 text-sm leading-relaxed break-keep">주기적인 랩미팅 노트와 그날의 할 일(투두리스트)을 캘린더와 연동하세요.</br>
+				교수님께서 요구하신 데이터나 주의사항을 잊지 않고 실험에 반영할 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <div class="bg-orange-50 border border-orange-100 rounded-3xl p-8 flex flex-col items-center text-center max-w-2xl mx-auto">
+                <div class="flex gap-2 mb-4">
+                    <div class="w-10 h-10 bg-white rounded-lg shadow-sm flex items-center justify-center text-orange-500">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-stone-800 mb-2">초보자를 위한 가이드 포함</h3>
+                <p class="text-stone-600 text-sm break-keep">관계형과 롤업이 익숙하지 않으신가요?</br> 템플릿 사용 방법부터 기능 구조의 이해까지 돕는</br> 가이드북 페이지가 템플릿 내부에 포함되어 있습니다.</br> 걱정 말고 시작하세요!</p>
+            </div>
+        </section>
+
+        <section class="border-t border-stone-100 pt-16 mb-20">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-stone-900 mb-2">먼저 사용해본 분들의 리뷰</h2>
+                <div class="flex items-center justify-center gap-2 mb-2">
+                    <div class="flex text-orange-400">
+                        <i data-lucide="star" class="w-5 h-5 fill-orange-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-orange-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-orange-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-orange-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-orange-400"></i>
+                    </div>
+                    <span class="text-stone-800 font-extrabold text-lg">4.8</span>
+                    <span class="text-stone-500 text-sm">(42개의 리뷰)</span>
+                </div>
+            </div>
+
+            <div class="bg-stone-50 border border-stone-200 rounded-3xl p-8 text-center max-w-2xl mx-auto shadow-sm">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm border border-stone-100">
+                    <i data-lucide="message-square" class="w-8 h-8 text-emerald-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-stone-800 mb-2">실제 사용자들의 후기</h3>
+                <p class="text-stone-600 text-sm mb-6 leading-relaxed break-keep">
+                    더욱 투명한 리뷰 제공을 위해<br class="hidden sm:block">
+                    실제 마켓플레이스의 리뷰 페이지로 안내해 드립니다.<br>
+                    솔직하고 다양한 의견들을 직접 확인해 보세요!
+                </p>
+                <a href="https://www.notion.com/ko/templates/research-note" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white border border-stone-200 text-stone-800 font-bold rounded-xl hover:bg-stone-100 hover:text-emerald-600 transition shadow-sm">
+                    마켓플레이스에서 리뷰 보기 <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="border-t border-stone-100 pt-16 mb-20">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-stone-900 mb-2">자주 묻는 질문 (FAQ)</h2>
+                <p class="text-stone-500 text-sm">다운로드 전 궁금하신 점을 미리 확인해 보세요.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4">
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-emerald-500">Q.</span> 템플릿 복제는 어떻게 하나요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <div class="flex items-start gap-1">
+                            <span class="text-emerald-500 font-bold">A.</span>
+                            <div class="space-y-2 flex-1 mt-0.5">
+                                <p>다운로드 받으신 <strong>PDF 파일</strong>을 열고, 첫 번째 버튼을 클릭하면 템플릿 페이지로 바로 이동합니다.
+                                노션(Notion)에 로그인하신 후, 우측 상단에 있는 <strong>'복제(Duplicate)'</strong> 아이콘을 클릭하시면 내 워크스페이스로 즉시 복사됩니다.
+                                <p class="text-stone-500 text-xs pt-2">더 자세한 과정이 궁금하시다면 아래 버튼을 눌러 네이버 블로그의 상세 가이드를 확인해 보세요!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-5 sm:ml-5">
+                            <a href="여기에_네이버_블로그_링크_입력" target="_blank" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white border border-stone-200 text-stone-700 font-bold rounded-lg hover:bg-stone-50 hover:text-[#03C75A] hover:border-[#03C75A]/30 transition shadow-sm text-sm w-full sm:w-auto group/btn">
+                                <span class="w-4 h-4 bg-[#03C75A] text-white rounded-[4px] flex items-center justify-center text-[10px] font-extrabold transition-transform group-hover/btn:scale-110">N</span>
+                                네이버 블로그에서 상세 가이드 보기 <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-emerald-500">Q.</span> 노션 무료 요금제에서도 사용 가능한가요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-emerald-500 font-bold mr-1">A.</span>  네 🥰 이 템플릿은 노션 개인 무료(Free) 요금제에서도 100% 원활하게 작동하도록 설계되었습니다.
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-emerald-500">Q.</span> 상업적 용도로 사용할 수 있나요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-emerald-500 font-bold mr-1">A.</span> 개인용으로만 사용하실 수 있으며, 상업적 용도로는 사용하실 수 없습니다.
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="border-t border-stone-100 pt-16">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-stone-900 mb-2">이 템플릿과 관련된 글을 읽어보세요</h2>
+                    <p class="text-stone-500 text-sm">템플릿 제작 과정과 유용한 노션 꿀팁을 확인할 수 있어요✨</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <a href="https://blog.naver.com/loraticon/224195370000" target="_blank" class="group block">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                        <img src="./images/template/research-note/blog1.webp" onerror="this.src='https://placehold.co/400x300/d1fae5/065f46?text=[Image+of+제작기1+썸네일]'" alt="블로그 글 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="px-2 py-0.5 bg-emerald-50 text-emerald-600 border border-emerald-100 rounded text-[10px] font-bold">N 블로그</span>
+                        <span class="px-2 py-0.5 bg-stone-50 text-stone-500 border border-stone-200 rounded text-[10px] font-bold">제작 비하인드</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 group-hover:text-emerald-600 transition line-clamp-2 mb-1">대학원생과 연구생을 위한 노션 템플릿 만들기</h3>
+                    <p class="text-xs text-stone-500 line-clamp-2">팔로워분의 소중한 요청으로 시작된 연구 노트 템플릿 제작기.</p>
+                </a>
+                <a href="https://blog.naver.com/loraticon/224195390190" target="_blank" class="group block">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                        <img src="./images/template/research-note/blog2.webp" onerror="this.src='https://placehold.co/400x300/f0fdf4/16a34a?text=[Image+of+제작기2+썸네일]'" alt="블로그 글 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="px-2 py-0.5 bg-emerald-50 text-emerald-600 border border-emerald-100 rounded text-[10px] font-bold">N 블로그</span>
+                        <span class="px-2 py-0.5 bg-stone-50 text-stone-500 border border-stone-200 rounded text-[10px] font-bold">제작 비하인드</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 group-hover:text-emerald-600 transition line-clamp-2 mb-1">연구생의 피드백 반영 및 개선 과정</h3>
+                    <p class="text-xs text-stone-500 line-clamp-2">실사용자 피드백 반영과 데이터베이스 구조 고도화 과정.</p>
+                </a>
+                <a href="#" target="_blank" class="group block">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                        <img src="./images/template/research-note/blog3.webp" onerror="this.src='https://placehold.co/400x300/ecfdf5/065f46?text=[Image+of+노션+관계형+강의+썸네일]'" alt="블로그 글 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="px-2 py-0.5 bg-emerald-50 text-emerald-600 border border-emerald-100 rounded text-[10px] font-bold">N 블로그</span>
+                        <span class="px-2 py-0.5 bg-stone-50 text-stone-500 border border-stone-200 rounded text-[10px] font-bold">노션 꿀팁</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 group-hover:text-emerald-600 transition line-clamp-2 mb-1">노션 관계형과 롤업 속성 차이점 쉽게 이해하기</h3>
+                    <p class="text-xs text-stone-500 line-clamp-2">데이터베이스 연결 기초 사용법. 관계형과 롤업의 구조를 쉽게 이해해 보세요.</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="fixed bottom-0 left-0 w-full bg-white border-t border-stone-200 p-3 sm:p-4 z-50 shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.05)]">
+        <div class="max-w-3xl mx-auto flex justify-between items-center gap-4">
+            <div class="hidden sm:block">
+                <p class="text-stone-500 text-xs font-bold mb-1">연구 노트 템플릿</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 bg-stone-100 text-stone-600 rounded text-[10px] font-bold border border-stone-200">무료 배포중</span>
+                    <p class="text-xl font-extrabold text-stone-900">FREE</p>
+                </div>
+            </div>
+            <div class="flex gap-2 w-full sm:w-auto">
+                <button onclick="this.classList.toggle('text-emerald-600'); this.classList.toggle('bg-emerald-50'); this.classList.toggle('border-emerald-200'); this.querySelector('svg').classList.toggle('fill-current');" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white border border-stone-200 text-stone-400 flex items-center justify-center hover:bg-emerald-50 hover:text-emerald-600 transition shrink-0" title="찜하기">
+                    <i data-lucide="heart" class="w-5 h-5"></i>
+                </button>
+                <a href="./files/연구노트_템플릿.pdf" download class="flex-1 sm:w-64 h-12 sm:h-14 bg-stone-900 text-white rounded-xl font-bold text-base hover:bg-stone-800 transition shadow-lg flex items-center justify-center gap-2 px-1">
+    <i data-lucide="download" class="w-5 h-5"></i> 지금 무료로 다운받기
+		</a>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

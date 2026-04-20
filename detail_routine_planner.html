@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>루틴 계획표 템플릿 - Loraticon</title>
+    <!-- Tailwind CSS (디자인 시스템) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.260.0/lucide.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #FAFAF9; 
+            color: #292524;
+        }
+        /* 스크롤바 숨기기 */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .scroll-smooth { scroll-behavior: smooth; }
+        /* FAQ 애니메이션 */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: slideDown 0.3s ease-in-out; }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-stone-200 selection:text-stone-900 pb-24">
+
+    <!-- 네비게이션 바 -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
+        <div class="max-w-4xl mx-auto px-4 h-14 flex justify-between items-center">
+            <!-- 뒤로가기 버튼: 클릭 시 index.html로 이동 -->
+            <a href="index.html" class="flex items-center gap-1.5 cursor-pointer text-stone-500 hover:text-stone-800 transition font-medium">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i> 뒤로가기
+            </a>
+            <div class="font-bold text-lg text-stone-800">루틴 계획표 템플릿</div>
+            <div class="w-20"></div> <!-- 중앙 정렬을 위한 여백 -->
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 bg-white shadow-sm min-h-screen">
+        
+        <!-- 1. 헤더: 타이틀, 난이도, 다운로드, 태그 -->
+        <header class="text-center mb-12">
+            <div class="flex flex-wrap justify-center gap-2 mb-6">
+                <span class="px-3 py-1 bg-stone-100 text-stone-500 text-sm font-bold rounded-md">#루틴관리</span>
+                <span class="px-3 py-1 bg-stone-100 text-stone-500 text-sm font-bold rounded-md">#습관형성</span>
+                <span class="px-3 py-1 bg-stone-100 text-stone-500 text-sm font-bold rounded-md">#시간표</span>
+                <span class="px-3 py-1 bg-stone-100 text-stone-500 text-sm font-bold rounded-md">#자기계발</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-stone-900 mb-10 word-keep">루틴 계획표 템플릿</h1>
+
+            <p class="text-base sm:text-lg text-stone-600 mb-8 max-w-2xl mx-auto leading-relaxed word-keep">
+                잠시 루틴이 멈추더라도 부담 없이 언제든지 돌아올 수 있어요.<br class="hidden sm:block">
+                비어있는 캘린더의 압박에서 벗어나, 하루의 작은 반복을 성취감으로 채워보세요.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-green-50 text-green-700 rounded-full border border-green-100 font-medium text-sm">
+                    <span class="flex items-center">난이도 <i data-lucide="star" class="w-4 h-4 ml-1 fill-green-500 text-green-500"></i></span>
+                    <span class="w-px h-3 bg-green-200"></span>
+                    <span>노션 초보자도 쉽게 사용 가능</span>
+                </div>
+
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-stone-50 text-stone-600 rounded-full border border-stone-200 font-medium text-sm">
+                    <div class="flex gap-1">
+                        <span class="w-5 h-5 bg-stone-800 text-white rounded-[4px] flex items-center justify-center text-[10px] font-bold">N</span>
+                    </div>
+                    <span>누적 다운로드</span>
+                    <span class="font-extrabold text-stone-800">1,080+</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. 아이패드 목업 이미지 영역 -->
+        <section class="mb-20 px-2 sm:px-0">
+            <div class="relative max-w-2xl mx-auto">
+                <div class="relative border-[10px] sm:border-[16px] border-stone-800 rounded-[1.5rem] sm:rounded-[2.5rem] shadow-2xl aspect-[4/3] bg-stone-800">
+                    <div class="absolute top-1/2 -left-2 sm:-left-4 -translate-y-1/2 w-1 sm:w-2 h-10 sm:h-12 bg-stone-900 rounded-r-md z-10"></div>
+                    <div class="absolute top-10 -right-2 sm:-right-4 w-1 sm:w-2 h-8 sm:h-10 bg-stone-900 rounded-l-md z-10"></div>
+                    <div class="w-full h-full overflow-hidden rounded-[14px] sm:rounded-[24px] bg-stone-100">
+                        <img src="./images/template/routine-planner/slide1.webp" onerror="this.src='https://placehold.co/800x600/fef3c7/d97706?text=[Image+of+아이패드+루틴계획표+화면]'" alt="템플릿 상세 이미지" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <p class="text-center text-sm text-stone-400 mt-5 flex items-center justify-center gap-1.5">
+                    <i data-lucide="monitor-smartphone" class="w-4 h-4"></i> 데스크톱, 태블릿에서 쉽게 사용해 보세요.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2.5 공감 체크리스트 영역 -->
+        <section class="mb-20 max-w-2xl mx-auto">
+            <div class="bg-stone-50 border border-stone-200 rounded-[2rem] p-8 sm:p-10 shadow-sm">
+                <h2 class="text-xl sm:text-2xl font-bold text-stone-900 mb-8 text-center">이런 분들에게 도움이 될 수 있어요</h2>
+                <div class="space-y-6 max-w-lg mx-auto">
+                    <label class="flex items-start gap-4 cursor-pointer group">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-stone-500 flex items-center justify-center shrink-0 mt-0.5 group-hover:border-stone-400 transition-colors">
+                            <i data-lucide="check" class="w-4 h-4 text-stone-800 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <span class="text-stone-700 text-sm sm:text-base leading-relaxed break-keep">
+                            루틴을 잘 지키다 며칠 빼먹으면, <strong class="text-stone-900">텅 빈 캘린더를 보고 의욕이 꺾여 포기하게 돼요.</strong>
+			            </span>
+                    </label>
+                    <label class="flex items-start gap-4 cursor-pointer group">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-stone-500 flex items-center justify-center shrink-0 mt-0.5 group-hover:border-stone-400 transition-colors">
+                            <i data-lucide="check" class="w-4 h-4 text-stone-800 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <span class="text-stone-700 text-sm sm:text-base leading-relaxed break-keep">
+                            매일매일 루틴을 하나씩 체크하는게 귀찮아서 <strong class="text-stone-900">버튼 한 번으로 일괄 완료 처리</strong> 하고 싶어요.
+			            </span>
+                    </label>
+                    <label class="flex items-start gap-4 cursor-pointer group">
+                        <div class="w-6 h-6 rounded-full bg-white border-2 border-stone-500 flex items-center justify-center shrink-0 mt-0.5 group-hover:border-stone-400 transition-colors">
+                            <i data-lucide="check" class="w-4 h-4 text-stone-800 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <span class="text-stone-700 text-sm sm:text-base leading-relaxed break-keep">
+                            루틴을 완료한 후의 뿌듯한 감정이나 작은 성취를 <strong class="text-stone-900">짧은 일기나 사진과 함께 기록</strong> 해두고 싶어요.
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 주요기능 -->
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-stone-900 mb-10 text-center flex items-center justify-center gap-2">
+                <i data-lucide="sparkles" class="text-amber-500 w-6 h-6"></i> 핵심 기능
+            </h2>
+            <div class="relative max-w-xl mx-auto pl-2">
+                <div class="absolute left-8 top-6 bottom-6 w-1 bg-stone-200 rounded-full"></div>
+                <div class="space-y-12">
+                    <!-- 기능 1 -->
+                    <div class="relative flex items-start gap-4 sm:gap-6 w-full">
+                        <div class="w-12 h-12 rounded-full bg-stone-800 text-white font-extrabold flex items-center justify-center shadow-md z-10 shrink-0">1</div>
+                        <div class="bg-white border border-stone-200 rounded-2xl flex-1 min-w-0 w-full shadow-sm hover:shadow-lg transition overflow-hidden">
+                            <div class="aspect-video bg-stone-100 w-full">
+                                <img src="./images/template/routine-planner/feat1.webp" onerror="this.src='https://placehold.co/600x338/fef3c7/d97706?text=[Image+of+보드뷰+시간표]'" alt="보드형 루틴 시간표" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg font-bold text-stone-800 mb-2">공백 스트레스 없는 보드형 시간표</h3>
+                                <p class="text-stone-600 text-sm leading-relaxed break-keep">캘린더의 텅 빈 날짜가 주는 압박감에서 벗어나세요.<br>
+				요일별 직관적인 보드 뷰를 통해, 며칠 쉬었더라도 죄책감 없이 언제든 다시 루틴을 이어갈 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 기능 2 -->
+                    <div class="relative flex items-start gap-4 sm:gap-6 w-full">
+                        <div class="w-12 h-12 rounded-full bg-stone-800 text-white font-extrabold flex items-center justify-center shadow-md z-10 shrink-0">2</div>
+                        <div class="bg-white border border-stone-200 rounded-2xl flex-1 min-w-0 w-full shadow-sm hover:shadow-lg transition overflow-hidden">
+                            <div class="aspect-video bg-stone-100 w-full">
+                                <img src="./images/template/routine-planner/feat2.webp" onerror="this.src='https://placehold.co/600x338/ecfccb/65a30d?text=[Image+of+일괄완료+버튼]'" alt="일괄 완료 버튼" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg font-bold text-stone-800 mb-2">클릭 한 번으로 일괄 완료 & 초기화</h3>
+                                <p class="text-stone-600 text-sm leading-relaxed break-keep">바쁜 날엔 일일이 체크하지 마세요! 각 요일별 '완료 버튼' 하나로 해당 요일의 모든 루틴을 단번에 체크 처리할 수 있습니다. 새로운 주가 시작될 땐 '초기화 버튼'으로 깔끔하게 리셋하세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 기능 3 -->
+                    <div class="relative flex items-start gap-4 sm:gap-6 w-full">
+                        <div class="w-12 h-12 rounded-full bg-stone-800 text-white font-extrabold flex items-center justify-center shadow-md z-10 shrink-0">3</div>
+                        <div class="bg-white border border-stone-200 rounded-2xl flex-1 min-w-0 w-full shadow-sm hover:shadow-lg transition overflow-hidden">
+                            <div class="aspect-video bg-stone-100 w-full">
+                                <img src="./images/template/routine-planner/feat3.webp" onerror="this.src='https://placehold.co/600x338/ffedd5/ea580c?text=[Image+of+루틴+노트+기록]'" alt="루틴 노트 기록" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg font-bold text-stone-800 mb-2">나의 하루를 남기는 루틴 노트</h3>
+                                <p class="text-stone-600 text-sm leading-relaxed break-keep">체크만 하고 끝내기엔 아쉬우니까요. 그날의 기분, 만족도 이모지, 짧은 한 줄 평과 인증 사진을 남겨보세요. 작은 기록들이 모여 나를 이해하는 소중한 자산이 됩니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 기능 4 -->
+                    <div class="relative flex items-start gap-4 sm:gap-6 w-full">
+                        <div class="w-12 h-12 rounded-full bg-stone-800 text-white font-extrabold flex items-center justify-center shadow-md z-10 shrink-0">4</div>
+                        <div class="bg-white border border-stone-200 rounded-2xl flex-1 min-w-0 w-full shadow-sm hover:shadow-lg transition overflow-hidden">
+                            <div class="aspect-video bg-stone-100 w-full">
+                                <img src="./images/template/routine-planner/feat4.webp" onerror="this.src='https://placehold.co/600x338/e0f2fe/0284c7?text=[Image+of+자동화+버튼+연동]'" alt="자동화 버튼 연동" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg font-bold text-stone-800 mb-2">노션 버튼 자동화</h3>
+                                <p class="text-stone-600 text-sm leading-relaxed break-keep">'기록 생성' 버튼을 누르면 오늘 날짜의 노트가 뚝딱 만들어지고,</br> '루틴 완료' 버튼을 누르면 오늘 설정된 루틴 목록이 노트 안으로 자동으로 쏙 들어옵니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 가이드 안내 -->
+        <section class="mb-20">
+            <div class="bg-amber-50 border border-amber-100 rounded-3xl p-8 flex flex-col items-center text-center max-w-2xl mx-auto">
+                <div class="flex gap-2 mb-4">
+                    <div class="w-10 h-10 bg-white rounded-lg shadow-sm flex items-center justify-center text-amber-500">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-stone-800 mb-2">템플릿 사용 가이드 제공</h3>
+                <p class="text-stone-600 text-sm break-keep">노션이 처음이신가요?<br>복제 방법부터 상세한 사용법까지 친절하게 설명된<br> 가이드북 페이지가 템플릿 내부에 포함되어 있습니다.<br> 누구나 쉽게 세팅하고 시작할 수 있어요!</p>
+            </div>
+        </section>
+
+        <!-- 5. 사용자 리뷰 (마켓플레이스 & 설문조사 링크) -->
+        <section class="border-t border-stone-100 pt-16 mb-20">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-stone-900 mb-2">함께 성장하고 있는 분들의 리뷰</h2>
+                <div class="flex items-center justify-center gap-2 mb-2">
+                    <div class="flex text-amber-400">
+                        <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+                    </div>
+                    <span class="text-stone-800 font-extrabold text-lg">5.0</span>
+                    <span class="text-stone-500 text-sm">(5개의 리뷰)</span>
+                </div>
+            </div>
+
+            <div class="bg-stone-50 border border-stone-200 rounded-3xl p-8 text-center max-w-2xl mx-auto shadow-sm">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm border border-stone-100">
+                    <i data-lucide="heart-handshake" class="w-8 h-8 text-amber-500"></i>
+                </div>
+                
+                <!-- 수정된 문구 -->
+                <h3 class="text-lg font-bold text-stone-800 mb-2">여러분의 소중한 후기를 기다려요 🥲</h3>
+                <p class="text-stone-600 text-sm mb-8 leading-relaxed break-keep">
+                    아직 등록된 리뷰가 많지 않아요.</br> 템플릿을 직접 사용해 보시고 느낀 점을 편하게 들려주시겠어요?<br class="hidden sm:block">
+                    여러분의 솔직한 피드백이 더 나은 템플릿을 만드는 데 아주 큰 힘이 됩니다.
+                </p>
+                
+                <!-- 버튼 영역 -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="여기에_설문조사_링크_입력" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-stone-800 text-white font-bold rounded-xl hover:bg-stone-700 transition shadow-sm w-full sm:w-auto">
+                        <i data-lucide="edit-3" class="w-4 h-4"></i> 1분 설문으로 의견 남기기
+                    </a>
+                    <a href="https://www.notion.com/ko/templates" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white border border-stone-200 text-stone-700 font-bold rounded-xl hover:bg-stone-50 hover:text-stone-900 transition shadow-sm w-full sm:w-auto">
+                        마켓플레이스 리뷰 보기 <i data-lucide="external-link" class="w-4 h-4 text-stone-400"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. 자주 묻는 질문 (FAQ) -->
+        <section class="border-t border-stone-100 pt-16 mb-20">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-stone-900 mb-2">자주 묻는 질문 (FAQ)</h2>
+                <p class="text-stone-500 text-sm">다운로드 전 궁금하신 점을 미리 확인해 보세요.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4">
+                <!-- 🌟 복제 방법 안내 (내용 및 네이버 블로그 버튼 추가) -->
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-stone-800">Q.</span> 템플릿 복제는 어떻게 하나요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <div class="flex items-start gap-1">
+                            <span class="text-stone-600 font-bold">A.</span>
+                            <div class="space-y-2 flex-1 mt-0.5">
+                                <p>다운로드 받으신 <strong>PDF 파일</strong>을 열고, 첫 번째 버튼을 클릭하면 템플릿 페이지로 바로 이동합니다.
+                                노션(Notion)에 로그인하신 후, 우측 상단에 있는 <strong>'복제(Duplicate)'</strong> 아이콘을 클릭하시면 내 워크스페이스로 즉시 복사됩니다.
+                                <p class="text-stone-500 text-xs pt-2">더 자세한 과정이 궁금하시다면 아래 버튼을 눌러 네이버 블로그의 상세 가이드를 확인해 보세요!</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 네이버 블로그 가이드 링크 버튼 -->
+                        <div class="mt-5 sm:ml-5">
+                            <a href="여기에_네이버_블로그_링크_입력" target="_blank" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white border border-stone-200 text-stone-700 font-bold rounded-lg hover:bg-stone-50 hover:text-[#03C75A] hover:border-[#03C75A]/30 transition shadow-sm text-sm w-full sm:w-auto group/btn">
+                                <span class="w-4 h-4 bg-[#03C75A] text-white rounded-[4px] flex items-center justify-center text-[10px] font-extrabold transition-transform group-hover/btn:scale-110">N</span>
+                                네이버 블로그에서 상세 가이드 보기 <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-stone-800">Q.</span> 노션 무료 요금제에서도 사용 가능한가요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-stone-800 font-bold mr-1">A.</span>  네 🥰 이 템플릿은 노션 개인 무료(Free) 요금제에서도 자동화 버튼을 포함한 모든 기능이 100% 원활하게 작동하도록 설계되었습니다.
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-stone-800">Q.</span> 상업적 용도로 사용할 수 있나요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-stone-800 font-bold mr-1">A.</span> 개인용으로만 사용하실 수 있으며, 상업적 용도로는 배포 및 사용하실 수 없습니다.
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- 7. 관련 블로그 글 영역 -->
+        <section class="border-t border-stone-100 pt-16">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-stone-900 mb-2">이 템플릿과 관련된 글을 읽어보세요</h2>
+                    <p class="text-stone-500 text-sm">기획 의도부터 숨겨진 버튼 기능 활용법까지 모두 담았어요✨</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <!-- 글 1 -->
+                <a href="https://m.blog.naver.com/loraticon/224095563037" target="_blank" class="group block">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                        <img src="./images/template/routine-planner/blog1.webp" onerror="this.src='https://placehold.co/400x300/fef3c7/d97706?text=[Image+of+블로그+썸네일+1]'" alt="블로그 글 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="px-2 py-0.5 bg-green-50 text-green-600 border border-green-100 rounded text-[10px] font-bold">N 블로그</span>
+                        <span class="px-2 py-0.5 bg-stone-50 text-stone-500 border border-stone-200 rounded text-[10px] font-bold">사용 후기</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 group-hover:text-amber-600 transition line-clamp-2 mb-1">노션 루틴 계획표 사용 후기 | 요즘 실천 중인 습관들</h3>
+                    <p class="text-xs text-stone-500 line-clamp-2">루틴 계획표 템플릿 실사용기를 공유합니다.</p>
+                </a>
+                <!-- 글 2 -->
+                <a href="https://m.blog.naver.com/loraticon/224036403226" target="_blank" class="group block">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                        <img src="./images/template/routine-planner/blog2.webp" onerror="this.src='https://placehold.co/400x300/fef3c7/d97706?text=[Image+of+블로그+썸네일+2]'" alt="블로그 글 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="px-2 py-0.5 bg-green-50 text-green-600 border border-green-100 rounded text-[10px] font-bold">N 블로그</span>
+                        <span class="px-2 py-0.5 bg-stone-50 text-stone-500 border border-stone-200 rounded text-[10px] font-bold">제작 비하인드</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 group-hover:text-amber-600 transition line-clamp-2 mb-1">노션 루틴계획표 만들기 1 - 기획과정</h3>
+                    <p class="text-xs text-stone-500 line-clamp-2">텅 빈 캘린더의 공백을 극복하기 위해 만든 과정을 소개해요.</p>
+                </a>
+                <!-- 글 3 -->
+                <a href="https://m.blog.naver.com/loraticon/224048247296" target="_blank" class="group block">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                        <img src="./images/template/routine-planner/blog3.webp" onerror="this.src='https://placehold.co/400x300/fef3c7/d97706?text=[Image+of+블로그+썸네일+3]'" alt="블로그 글 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="px-2 py-0.5 bg-green-50 text-green-600 border border-green-100 rounded text-[10px] font-bold">N 블로그</span>
+                        <span class="px-2 py-0.5 bg-stone-50 text-stone-500 border border-stone-200 rounded text-[10px] font-bold">사용 방법</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 group-hover:text-amber-600 transition line-clamp-2 mb-1">노션 루틴계획표 만들기 2 - 버튼 기능으로 자동화하기</h3>
+                    <p class="text-xs text-stone-500 line-clamp-2">일괄 완료 및 노트 생성 버튼의 원리를 자세히 알려드립니다.</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 하단 고정 다운로드 버튼 (Sticky CTA) -->
+    <div class="fixed bottom-0 left-0 w-full bg-white border-t border-stone-200 p-3 sm:p-4 z-50 shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.05)]">
+        <div class="max-w-3xl mx-auto flex justify-between items-center gap-4">
+            <div class="hidden sm:block">
+                <p class="text-stone-500 text-xs font-bold mb-1">노션 루틴 계획표 템플릿</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 bg-stone-100 text-stone-600 rounded text-[10px] font-bold border border-stone-200">무료 배포중</span>
+                    <p class="text-xl font-extrabold text-stone-900">FREE</p>
+                </div>
+            </div>
+            <div class="flex gap-2 w-full sm:w-auto">
+                <button onclick="this.classList.toggle('text-amber-500'); this.classList.toggle('bg-amber-50'); this.classList.toggle('border-amber-200'); this.querySelector('svg').classList.toggle('fill-current');" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white border border-stone-200 text-stone-400 flex items-center justify-center hover:bg-amber-50 hover:text-amber-500 transition shrink-0" title="찜하기">
+                    <i data-lucide="heart" class="w-5 h-5"></i>
+                </button>
+                <a href="./files/루틴계획표_템플릿.pdf" download class="flex-1 sm:w-64 h-12 sm:h-14 bg-stone-900 text-white rounded-xl font-bold text-base hover:bg-stone-800 transition shadow-lg flex items-center justify-center gap-2 px-1">
+    <i data-lucide="download" class="w-5 h-5"></i> 지금 무료로 다운받기
+		</a>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
