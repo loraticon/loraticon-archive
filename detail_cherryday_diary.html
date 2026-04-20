@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체리 데이 다이어리 노션 꾸미기 세트 - loraticon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.260.0/lucide.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #FAFAF9; 
+            color: #292524;
+        }
+        /* 스크롤바 숨기기 */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* 부드러운 스크롤 */
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        /* FAQ 애니메이션 */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: slideDown 0.3s ease-in-out;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-rose-200 selection:text-rose-900 pb-24">
+
+    <!-- 네비게이션 바 -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
+        <div class="max-w-4xl mx-auto px-4 h-14 flex justify-between items-center">
+            <!-- 뒤로가기 버튼: 클릭 시 index.html로 이동 -->
+            <a href="index.html" class="flex items-center gap-1.5 cursor-pointer text-stone-500 hover:text-stone-800 transition font-medium">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i> 뒤로가기
+            </a>
+            <div class="font-bold text-lg text-stone-800">꾸미기 세트</div>
+            <div class="w-20"></div> <!-- 중앙 정렬을 위한 여백 -->
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 bg-white shadow-sm min-h-screen">
+        
+        <!-- 1. 헤더: 태그, 타이틀, 설명 -->
+        <header class="text-center mb-12">
+            <!-- 관련 태그 -->
+            <div class="flex flex-wrap justify-center gap-2 mb-6">
+                <span class="px-3 py-1 bg-rose-50 text-rose-500 border border-rose-100 text-sm font-bold rounded-full">#마스킹테이프</span>
+                <span class="px-3 py-1 bg-rose-50 text-rose-500 border border-rose-100 text-sm font-bold rounded-full">#체크패턴</span>
+                <span class="px-3 py-1 bg-rose-50 text-rose-500 border border-rose-100 text-sm font-bold rounded-full">#체리</span>
+            </div>
+
+            <!-- 타이틀 -->
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-stone-900 mb-10 word-keep">체리 데이 다이어리</h1>
+
+            <!-- 짧은 설명 -->
+            <p class="text-base sm:text-lg text-stone-600 mb-8 max-w-2xl mx-auto leading-relaxed word-keep">
+                상큼한 체리와 따뜻해 보이는 깅엄 체크의 조합🍒<br class="hidden sm:block">
+                내 마음대로 조합해서 나만의 노션 다이어리를 만들어 보세요.</p>
+        </header>
+
+        <!-- 2. 아이패드 목업 슬라이더 (메인) -->
+        <section class="mb-20 px-2 sm:px-0 relative slider-wrapper max-w-2xl mx-auto">
+            <!-- 슬라이더 좌우 버튼 -->
+            <button class="slider-left absolute left-[-10px] md:left-[-40px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-stone-100 flex items-center justify-center text-stone-400 hover:text-rose-500 z-30 transition hidden sm:flex">
+                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            </button>
+            <button class="slider-right absolute right-[-10px] md:right-[-40px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-stone-100 flex items-center justify-center text-stone-400 hover:text-rose-500 z-30 transition hidden sm:flex">
+                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </button>
+
+            <!-- 100일 챌린지와 동일한 아이패드 프레임 디자인 -->
+            <div class="relative border-[10px] sm:border-[16px] border-stone-800 rounded-[1.5rem] sm:rounded-[2.5rem] shadow-2xl aspect-[4/3] bg-stone-800">
+                <div class="absolute top-1/2 -left-2 sm:-left-4 -translate-y-1/2 w-1 sm:w-2 h-10 sm:h-12 bg-stone-900 rounded-r-md z-20"></div>
+                <div class="absolute top-10 -right-2 sm:-right-4 w-1 sm:w-2 h-8 sm:h-10 bg-stone-900 rounded-l-md z-20"></div>
+                
+                <!-- 화면 내부 영역 -->
+                <div class="w-full h-full overflow-hidden rounded-[14px] sm:rounded-[24px] bg-stone-100 relative">
+                    <div class="slider-container flex overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth w-full h-full">
+                        
+                        <!-- 슬라이드 1 -->
+                        <div class="w-full h-full flex-none snap-center relative">
+                            <img src="./images/deco/cherry-day-dairy/slide1.webp" onerror="this.src='https://placehold.co/800x600/fdf2f8/ec4899?text='" alt="테마 적용 메인" class="w-full h-full object-cover">
+                            <div class="absolute bottom-4 right-4 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-sm">1 / 3 메인 적용샷</div>
+                        </div>
+                        
+                        <!-- 슬라이드 2 -->
+                        <div class="w-full h-full flex-none snap-center relative">
+                            <img src="https://placehold.co/800x600/ffe4e6/be123c?text='" alt="상세 화면 1" class="w-full h-full object-cover">
+                            <div class="absolute bottom-4 right-4 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-sm">2 / 3 상세 레이아웃</div>
+                        </div>
+                        
+                        <!-- 슬라이드 3 -->
+                        <div class="w-full h-full flex-none snap-center relative">
+                            <img src="https://placehold.co/800x600/fff1f2/9f1239?text='" alt="상세 화면 2" class="w-full h-full object-cover">
+                            <div class="absolute bottom-4 right-4 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-sm">3 / 3 전체 분위기</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-sm text-stone-400 mt-5 sm:hidden flex items-center justify-center gap-1.5">
+                <i data-lucide="hand" class="w-4 h-4"></i> 좌우로 스와이프하여 확인하세요
+            </p>
+        </section>
+
+        <!-- 2.5 구성품 안내 영역 -->
+        <section class="mb-20 max-w-2xl mx-auto">
+            <div class="bg-stone-50 border border-stone-100 rounded-[2rem] p-8 shadow-sm">
+                <h2 class="text-xl font-bold text-stone-900 mb-6 text-center flex items-center justify-center gap-2">
+                    <i data-lucide="package-open" class="text-rose-400 w-5 h-5"></i> 
+                    풍성하게 꽉 채운 구성품 안내
+                </h2>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-stone-100 flex flex-col items-center justify-center aspect-square transition hover:-translate-y-1 hover:shadow-md">
+                        <span class="text-3xl mb-2">🖼️</span>
+                        <div class="font-extrabold text-stone-800 text-lg mb-0.5">4개</div>
+                        <div class="text-xs font-bold text-stone-500">테마 커버 이미지</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-stone-100 flex flex-col items-center justify-center aspect-square transition hover:-translate-y-1 hover:shadow-md">
+                        <span class="text-3xl mb-2">✨</span>
+                        <div class="font-extrabold text-stone-800 text-lg mb-0.5">2개</div>
+                        <div class="text-xs font-bold text-stone-500">페이지 아이콘</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-stone-100 flex flex-col items-center justify-center aspect-square transition hover:-translate-y-1 hover:shadow-md">
+                        <span class="text-3xl mb-2">🎀</span>
+                        <div class="font-extrabold text-stone-800 text-lg mb-0.5">58개</div>
+                        <div class="text-xs font-bold text-stone-500">이모지</div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-stone-100 flex flex-col items-center justify-center aspect-square transition hover:-translate-y-1 hover:shadow-md">
+                        <span class="text-3xl mb-2">💻</span>
+                        <div class="font-extrabold text-stone-800 text-lg mb-0.5">1개</div>
+                        <div class="text-xs font-bold text-stone-500">노션 템플릿</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 수정됨: 2.7 전체 구성품 한눈에 보기 (슬라이더 및 텍스트 라벨 적용됨) -->
+        <section class="mb-24 max-w-3xl mx-auto">
+            <h2 class="text-2xl font-bold text-stone-900 mb-8 text-center flex items-center justify-center gap-2">
+                <i data-lucide="layout-dashboard" class="text-rose-400 w-6 h-6"></i> 세트 전체 구성
+            </h2>
+            
+            <div class="relative slider-wrapper bg-white rounded-[2.5rem] p-3 shadow-sm border border-stone-200 aspect-[4/3] sm:aspect-[16/9]">
+                <div class="relative w-full h-full rounded-[2rem] overflow-hidden bg-white">
+                    <!-- 좌우 버튼 -->
+                    <button class="slider-left absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/90 backdrop-blur rounded-full shadow-md border border-stone-100 flex items-center justify-center text-stone-500 hover:text-rose-500 z-10 transition">
+                        <i data-lucide="chevron-left" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </button>
+                    <button class="slider-right absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/90 backdrop-blur rounded-full shadow-md border border-stone-100 flex items-center justify-center text-stone-500 hover:text-rose-500 z-10 transition">
+                        <i data-lucide="chevron-right" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </button>
+
+                    <!-- 슬라이더 컨테이너 -->
+                    <div class="slider-container flex overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth w-full h-full">
+                        <!-- 전체 구성 슬라이드 1: 메인 커버 -->
+                        <div class="w-full h-full flex-none snap-center relative">
+                            <img src="./images/deco/cherry-day-dairy/all1.webp" alt="메인 커버 전체 구성" class="w-full h-full object-contain">
+                            <div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold text-white shadow-sm z-10">1 / 4 메인 커버</div>
+                        </div>
+                        <!-- 전체 구성 슬라이드 2: 페이지 아이콘 -->
+                        <div class="w-full h-full flex-none snap-center relative">
+                            <img src="./images/deco/cherry-day-dairy/all2.webp" alt="페이지 아이콘 전체 구성" class="w-full h-full object-contain">
+                            <div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold text-white shadow-sm z-10">2 / 4 페이지 아이콘</div>
+                        </div>
+                        <!-- 전체 구성 슬라이드 3: 이모지 -->
+                        <div class="w-full h-full flex-none snap-center relative">
+                            <img src="./images/deco/cherry-day-dairy/all3.webp" alt="이모지 전체 구성" class="w-full h-full object-contain">
+                            <div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold text-white shadow-sm z-10">3 / 4 이모지</div>
+                        </div>
+                        <!-- 전체 구성 슬라이드 4: 이모지 -->
+                        <div class="w-full h-full flex-none snap-center relative">
+                            <img src="./images/deco/cherry-day-dairy/all4.webp" alt="이모지 전체 구성" class="w-full h-full object-contain">
+                            <div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold text-white shadow-sm z-10">4 / 4 이모지</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 미리보기 (세로 나열 + 개별 슬라이더) -->
+        <section class="mb-24 relative max-w-xl mx-auto">
+            <h2 class="text-2xl font-bold text-stone-900 mb-10 text-center flex items-center justify-center gap-2">
+                <i data-lucide="image" class="text-rose-400 w-6 h-6"></i> 미리보기
+            </h2>
+
+            <div class="space-y-20">
+                
+                <!-- 수정됨: 미리보기 1: 테마 커버 (슬라이더 제거, 2x2 그리드 적용) -->
+                <div class="group">
+                    <div class="bg-white rounded-[2rem] p-4 mb-6 shadow-sm border border-stone-200">
+                        <!-- 2x2 그리드로 4개의 커버 배치 -->
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="rounded-xl overflow-hidden bg-rose-50 aspect-video relative">
+                                <img src="./images/deco/cherry-day-dairy/cover1.webp" onerror="this.src='https://placehold.co/800x450/fecdd3/e11d48?text='" alt="커버 1" class="w-full h-full object-cover transition hover:scale-105">
+                            </div>
+                            <div class="rounded-xl overflow-hidden bg-rose-50 aspect-video relative">
+                                <img src="./images/deco/cherry-day-dairy/cover2.webp" onerror="this.src='https://placehold.co/800x450/fecdd3/be123c?text='" alt="커버 2" class="w-full h-full object-cover transition hover:scale-105">
+                            </div>
+                            <div class="rounded-xl overflow-hidden bg-rose-50 aspect-video relative">
+                                <img src="./images/deco/cherry-day-dairy/cover3.webp" onerror="this.src='https://placehold.co/800x450/fecdd3/9f1239?text='" alt="커버 3" class="w-full h-full object-cover transition hover:scale-105">
+                            </div>
+                            <div class="rounded-xl overflow-hidden bg-rose-50 aspect-video relative">
+                                <img src="./images/deco/cherry-day-dairy/cover4.webp" onerror="this.src='https://placehold.co/800x450/fecdd3/881337?text='" alt="커버 4" class="w-full h-full object-cover transition hover:scale-105">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center px-4">
+                        <span class="text-rose-500 font-bold text-sm mb-2 block">01. Main Covers</span>
+                        <h3 class="text-xl font-bold text-stone-800 mb-3">페이지의 분위기를 결정하는 커버</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed break-keep max-w-md mx-auto">
+                            파스텔 핑크와 생기 있는 살몬 핑크가 어우러져 따뜻한 무드를 연출해요.</br> 메인 커버, 갤러리 보기 커버로 적용해 나만의 특별한 일기장을 만들어보세요.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 미리보기 2: 페이지 아이콘 (슬라이더 유지) -->
+                <div class="group">
+                    <div class="relative slider-wrapper bg-white rounded-[2rem] p-2 aspect-video mb-6 shadow-sm border border-stone-200">
+                        <div class="relative w-full h-full rounded-[1.5rem] overflow-hidden bg-orange-50">
+                            <button class="slider-left absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur rounded-full shadow-md border border-stone-100 flex items-center justify-center text-stone-500 hover:text-rose-500 z-10 transition">
+                                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                            </button>
+                            <button class="slider-right absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur rounded-full shadow-md border border-stone-100 flex items-center justify-center text-stone-500 hover:text-rose-500 z-10 transition">
+                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                            </button>
+
+                            <div class="slider-container flex overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth w-full h-full">
+                                <div class="w-full flex-none snap-center relative">
+                                    <img src="./images/deco/cherry-day-dairy/icon1.webp" onerror="this.src='https://placehold.co/800x450/ffedd5/f97316?text='" alt="아이콘 1" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 right-4 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-sm">1 / 2</span>
+                                </div>
+                                <div class="w-full flex-none snap-center relative">
+                                    <img src="./images/deco/cherry-day-dairy/icon2.webp" onerror="this.src='https://placehold.co/800x450/ffedd5/ea580c?text='" alt="아이콘 2" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 right-4 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-sm">2 / 2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center px-4">
+                        <span class="text-rose-500 font-bold text-sm mb-2 block">02. Page Icons</span>
+                        <h3 class="text-xl font-bold text-stone-800 mb-3">심플한 체리 아이콘</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed break-keep max-w-md mx-auto">
+			    노션 페이지에 귀여운 체리를 얹어 보세요.</br> 커버와 함께 쓰면 귀여움이 더해져요.</p>
+                    </div>
+                </div>
+
+                <!-- 미리보기 3: 이모지 (슬라이더 유지) -->
+                <div class="group">
+                    <div class="relative slider-wrapper bg-white rounded-[2rem] p-2 aspect-video mb-6 shadow-sm border border-stone-200">
+                        <div class="relative w-full h-full rounded-[1.5rem] overflow-hidden bg-stone-50">
+                            <button class="slider-left absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur rounded-full shadow-md border border-stone-100 flex items-center justify-center text-stone-500 hover:text-rose-500 z-10 transition">
+                                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                            </button>
+                            <button class="slider-right absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur rounded-full shadow-md border border-stone-100 flex items-center justify-center text-stone-500 hover:text-rose-500 z-10 transition">
+                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                            </button>
+
+                            <div class="slider-container flex overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth w-full h-full">
+                                <div class="w-full flex-none snap-center relative">
+                                    <img src="./images/deco/cherry-day-dairy/emoji1.webp" alt="이모지 1" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 right-4 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-sm">1 / 3</span>
+                                </div>
+                                <div class="w-full flex-none snap-center relative">
+                                    <img src="./images/deco/cherry-day-dairy/emoji2.webp" alt="이모지 2" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 right-4 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-sm">2 / 3</span>
+                                </div>
+                                <div class="w-full flex-none snap-center relative">
+                                    <img src="./images/deco/cherry-day-dairy/emoji3.webp" alt="이모지 2" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 right-4 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-sm">3 / 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center px-4">
+                        <span class="text-rose-500 font-bold text-sm mb-2 block">03. Emojis</span>
+                        <h3 class="text-xl font-bold text-stone-800 mb-3">조합하며 꾸밀 수 있는 이모지</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed break-keep max-w-md mx-auto">
+                            다양한 이모지들을 요리조리 조합해서 노션 페이지를 꾸며보세요!</br> 체크무늬, 사선 패턴, 체리 등 다양한 이모지가 준비되어 있습니다.</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 가이드 안내 -->
+        <section class="mb-20">
+            <div class="bg-orange-50 border border-orange-100 rounded-3xl p-8 flex flex-col items-center text-center max-w-2xl mx-auto">
+                <div class="flex gap-2 mb-4">
+                    <div class="w-10 h-10 bg-white rounded-lg shadow-sm flex items-center justify-center text-orange-500">
+                        <i data-lucide="palette" class="w-6 h-6"></i>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-stone-800 mb-2">노션 꾸미기 가이드 포함</h3>
+                <p class="text-stone-600 text-sm break-keep">아이콘은 어떻게 바꾸나요? 커버는 어떻게 넣죠?</br> 걱정하지 마세요!</br> 초보자도 쉽게 따라 할 수 있는 다꾸 적용 가이드가 동봉되어 있습니다.</p>
+            </div>
+        </section>
+
+        <!-- 5. 사용자 리뷰 (마켓플레이스 링크) - 숨김 처리됨 -->
+        <section class="hidden border-t border-stone-100 pt-16 mb-20">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-stone-900 mb-2">먼저 꾸며본 분들의 리뷰</h2>
+                <div class="flex items-center justify-center gap-2 mb-2">
+                    <div class="flex text-orange-400">
+                        <i data-lucide="star" class="w-5 h-5 fill-orange-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-orange-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-orange-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-orange-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-orange-400"></i>
+                    </div>
+                    <span class="text-stone-800 font-extrabold text-lg">5.0</span>
+                    <span class="text-stone-500 text-sm">(42개의 리뷰)</span>
+                </div>
+            </div>
+
+            <div class="bg-stone-50 border border-stone-200 rounded-3xl p-8 text-center max-w-2xl mx-auto shadow-sm">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm border border-stone-100">
+                    <i data-lucide="message-square" class="w-8 h-8 text-rose-400"></i>
+                </div>
+                <h3 class="text-lg font-bold text-stone-800 mb-2">실제 사용자들의 후기</h3>
+                <p class="text-stone-600 text-sm mb-6 leading-relaxed break-keep">
+                    더욱 투명한 리뷰 제공을 위해<br class="hidden sm:block">
+                    실제 마켓플레이스의 리뷰 페이지로 안내해 드립니다.<br>
+                    솔직하고 다양한 의견들을 직접 확인해 보세요!
+                </p>
+                <a href="여기에_마켓플레이스_리뷰_링크_넣기" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white border border-stone-200 text-stone-800 font-bold rounded-xl hover:bg-stone-100 hover:text-rose-500 transition shadow-sm">
+                    마켓플레이스에서 리뷰 보기 <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 6. 자주 묻는 질문 (FAQ) -->
+        <section class="border-t border-stone-100 pt-16 mb-20">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-stone-900 mb-2">자주 묻는 질문 (FAQ)</h2>
+                <p class="text-stone-500 text-sm">구매 전 궁금하신 점을 미리 확인해 보세요.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4">
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-rose-400">Q.</span> 아이패드나 모바일에서도 적용이 가능한가요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-rose-400 font-bold mr-1">A.</span>아이패드, 모바일에서도 적용할 수 있지만 기기별로 기능의 한계가 있습니다.</br> 노션 꾸미기는 데스크톱(PC)로 하는 것을 추천해요.</div>
+                </details>
+
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-rose-400">Q.</span> 구매하면 파일은 어떻게 받나요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-rose-400 font-bold mr-1">A.</span>하단의 '구매하러 가기' 버튼을 누르시면 상품 결제 페이지로 이동합니다.</br> 해당 페이지에서 결제 완료 직후, 파일은 자동으로 구매자의 이메일로 전달됩니다.</div>
+                </details>
+
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-rose-400">Q.</span> 결제 후 환불이 가능한가요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-rose-400 font-bold mr-1">A.</span> 디지털 다운로드 상품의 특성상 파일이 다운로드 된 이후에는 교환 및 환불이 불가능합니다.</br> 구매 전 구성을 꼼꼼히 확인해 주세요.
+                    </div>
+                </details>
+
+                <!-- 새로 추가된 저작권 및 사용 범위 안내 FAQ -->
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-rose-400">Q.</span> 구매한 파일의 저작권 및 사용 범위는 어떻게 되나요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-rose-400 font-bold mr-1 block mb-3">A. 본 상품은 저작권법의 보호를 받으며, 아래의 규정을 반드시 지켜주셔야 합니다.</span>
+                        <ul class="space-y-1.5 ml-1 list-disc list-inside">
+                            <li><span class="font-bold text-stone-700">개인 용도</span>로만 사용 가능합니다.</li>
+                            <li><span class="font-bold text-stone-700">구매자 본인 계정</span>에서만 사용 가능합니다.</li>
+                            <li>원작자의 동의 없는 <span class="font-bold text-stone-700">2차 가공 및 재배포를 금지</span>합니다.</li>
+                            <li><span class="font-bold text-stone-700">상업적 사용</span>은 절대 불가합니다.</li>
+                            <li><span class="font-bold text-stone-700">파일 공유</span>(다운로드 링크 전달 포함)를 금지합니다.</li>
+                            <li>템플릿/파일을 <span class="font-bold text-stone-700">NFT·AI 학습용 데이터</span>로 사용할 수 없습니다.</li>
+                            <li>비슷한 구성, 소스 코드, 이미지를 그대로 <span class="font-bold text-stone-700">재사용하거나 판매하는 것을 금지</span>합니다.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- 7. 관련 글 영역 -->
+        <section class="border-t border-stone-100 pt-16">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-stone-900 mb-2">노션 꾸미기 추천 꿀팁</h2>
+                    <p class="text-stone-500 text-sm">노션 꾸미기가 막막할 때 읽어보세요✨</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <a href="#" class="group block">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                        <img src="./images/deco/cherry-day-dairy/blog1.webp" alt="블로그 글 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="px-2 py-0.5 bg-green-50 text-green-600 border border-green-100 rounded text-[10px] font-bold">N 블로그</span>
+                        <span class="px-2 py-0.5 bg-stone-50 text-stone-500 border border-stone-200 rounded text-[10px] font-bold">활용 꿀팁</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 group-hover:text-rose-500 transition line-clamp-2 mb-1">노션 갤러리 보기에 썸네일 설정하기</h3>
+                    <p class="text-xs text-stone-500 line-clamp-2">데이터베이스의 갤러리 보기에서 썸네일을 적용하는 방법을 알려드립니다.</p>
+                </a>
+                
+                <a href="#" class="group block">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                        <img src="./images/deco/cherry-day-dairy/blog2.webp" alt="블로그 글 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="px-2 py-0.5 bg-green-50 text-green-600 border border-green-100 rounded text-[10px] font-bold">N 블로그</span>
+                        <span class="px-2 py-0.5 bg-stone-50 text-stone-500 border border-stone-200 rounded text-[10px] font-bold">테마 추천</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 group-hover:text-rose-500 transition line-clamp-2 mb-1">노션 커스텀 아이콘 추가하기</h3>
+                    <p class="text-xs text-stone-500 line-clamp-2">노션에 나만의 아이콘을 이모지로 추가하는 방법을 알려드려요.</p>
+                </a>
+
+                <a href="#" class="group block">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                        <img src="./images/deco/cherry-day-dairy/blog3.webp" alt="블로그 글 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="px-2 py-0.5 bg-green-50 text-green-600 border border-green-100 rounded text-[10px] font-bold">N 블로그</span>
+                        <span class="px-2 py-0.5 bg-stone-50 text-stone-500 border border-stone-200 rounded text-[10px] font-bold">제작 비하인드</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 group-hover:text-rose-500 transition line-clamp-2 mb-1">열 나누기 하는 방법과 주의점</h3>
+                    <p class="text-xs text-stone-500 line-clamp-2">노션에서 열나누기를 하는 방법과 많이 사용하면 안되는 주의점을 안내합니다.</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 하단 고정 구매 버튼 (Sticky CTA) 유료 에셋용 -->
+    <div class="fixed bottom-0 left-0 w-full bg-white border-t border-stone-200 p-3 sm:p-4 z-50 shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.05)]">
+        <div class="max-w-3xl mx-auto flex justify-between items-center gap-4">
+            
+            <!-- 데스크탑용 정보 표시 -->
+            <div class="hidden sm:block">
+                <p class="text-stone-500 text-xs font-bold mb-1">체리 데이 다이어리</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 bg-stone-100 text-stone-600 rounded text-[10px] font-bold border border-stone-200">유료 상품</span>
+                    <p class="text-xl font-extrabold text-stone-900">3,000원</p>
+                </div>
+            </div>
+
+            <!-- 모바일용 금액 표시 (좌측 정렬) -->
+            <div class="sm:hidden font-extrabold text-xl text-stone-900 shrink-0">
+                3,000원
+            </div>
+
+            <div class="flex gap-2 w-full sm:w-auto justify-end">
+                <!-- 찜하기(하트) 버튼 -->
+                <button onclick="this.classList.toggle('text-rose-500'); this.classList.toggle('bg-rose-50'); this.classList.toggle('border-rose-200'); this.querySelector('svg').classList.toggle('fill-current');" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white border border-stone-200 text-stone-400 flex items-center justify-center hover:bg-rose-50 hover:text-rose-500 hover:border-rose-200 transition shrink-0 shadow-sm" title="찜하기">
+                    <i data-lucide="heart" class="w-5 h-5"></i>
+                </button>
+                
+                <!-- 구매하기 버튼 -->
+                <a href="https://litt.ly/loraticon/sale/QmitZre" target="_blank" class="flex-1 sm:w-64 h-12 sm:h-14 bg-stone-900 text-white rounded-xl font-bold text-base hover:bg-stone-800 transition shadow-lg flex items-center justify-center 		gap-2 px-1">
+    		<i data-lucide="shopping-bag" class="w-5 h-5"></i> 구매하러 가기
+		</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 스크립트 -->
+    <script>
+        lucide.createIcons();
+
+        // 문서 내의 모든 '.slider-wrapper'를 찾아 독립적인 슬라이더 기능 부여
+        // 새롭게 추가한 '세트 전체 구성' 슬라이더에도 동일하게 적용됩니다.
+        document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
+            const container = wrapper.querySelector('.slider-container');
+            const btnLeft = wrapper.querySelector('.slider-left');
+            const btnRight = wrapper.querySelector('.slider-right');
+
+            if (container && btnLeft && btnRight) {
+                // 왼쪽 버튼 클릭: 처음이면 마지막으로, 아니면 왼쪽으로 한 칸 이동
+                btnLeft.addEventListener('click', () => {
+                    // 5px 정도의 오차를 허용하여 현재 스크롤이 맨 앞인지 확인
+                    if (container.scrollLeft <= 5) {
+                        container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
+                    } else {
+                        container.scrollBy({ left: -container.clientWidth, behavior: 'smooth' });
+                    }
+                });
+
+                // 오른쪽 버튼 클릭: 마지막이면 처음으로, 아니면 오른쪽으로 한 칸 이동
+                btnRight.addEventListener('click', () => {
+                    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+                    // 5px 정도의 오차를 허용하여 현재 스크롤이 맨 끝인지 확인
+                    if (container.scrollLeft >= maxScrollLeft - 5) {
+                        container.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        container.scrollBy({ left: container.clientWidth, behavior: 'smooth' });
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
