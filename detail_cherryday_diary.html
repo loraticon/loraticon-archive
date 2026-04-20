@@ -57,11 +57,10 @@
 
         <!-- 2. 아이패드 목업 슬라이더 (메인) -->
         <section class="mb-20 px-2 sm:px-0 relative slider-wrapper max-w-2xl mx-auto">
-            <!-- 모바일에서 숨김: hidden sm:flex -->
             <button class="slider-left absolute left-[-10px] md:left-[-40px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-stone-100 items-center justify-center text-stone-400 hover:text-rose-500 z-30 transition hidden sm:flex">
                 <i data-lucide="chevron-left" class="w-6 h-6"></i>
             </button>
-            <button class="slider-right absolute right-[-10px] md:right-[-40px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-stone-100 items-center justify-center text-stone-400 hover:text-rose-500 z-30 transition hidden sm:flex">
+            <button class="slider-right absolute right-[-10px] md:left-[-40px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-stone-100 items-center justify-center text-stone-400 hover:text-rose-500 z-30 transition hidden sm:flex">
                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
             </button>
 
@@ -164,7 +163,7 @@
             </h2>
 
             <div class="space-y-20">
-                <!-- 미리보기 1: 테마 커버 -->
+                <!-- 미리보기 1 -->
                 <div class="group">
                     <div class="bg-white rounded-[2rem] p-4 mb-6 shadow-sm border border-stone-200">
                         <div class="grid grid-cols-2 gap-3">
@@ -191,7 +190,7 @@
                     </div>
                 </div>
 
-                <!-- 미리보기 2: 페이지 아이콘 -->
+                <!-- 미리보기 2 -->
                 <div class="group">
                     <div class="relative slider-wrapper bg-white rounded-[2rem] p-2 aspect-video mb-6 shadow-sm border border-stone-200">
                         <div class="relative w-full h-full rounded-[1.5rem] overflow-hidden bg-orange-50">
@@ -223,7 +222,7 @@
                     </div>
                 </div>
 
-                <!-- 미리보기 3: 이모지 -->
+                <!-- 미리보기 3 -->
                 <div class="group">
                     <div class="relative slider-wrapper bg-white rounded-[2rem] p-2 aspect-video mb-6 shadow-sm border border-stone-200">
                         <div class="relative w-full h-full rounded-[1.5rem] overflow-hidden bg-stone-50">
@@ -299,28 +298,33 @@
                         <span class="text-rose-400 font-bold mr-1">A.</span>하단의 '구매하러 가기' 버튼을 누르시면 상품 결제 페이지로 이동합니다.</br> 해당 페이지에서 결제 완료 직후, 파일은 자동으로 구매자의 이메일로 전달됩니다.
                     </div>
                 </details>
-                <!-- 저작권 FAQ 생략... 동일 유지 -->
             </div>
         </section>
 
     </main>
 
-    <!-- 하단 구매 버튼 -->
-    <div class="fixed bottom-0 left-0 w-full bg-white border-t border-stone-200 p-3 sm:p-4 z-50 shadow-lg">
-        <div class="max-w-3xl mx-auto flex justify-between items-center gap-4">
-            <div class="hidden sm:block">
-                <p class="text-stone-500 text-xs font-bold mb-1">체리 데이 다이어리</p>
-                <div class="flex items-center gap-2">
-                    <span class="px-2 py-0.5 bg-stone-100 text-stone-600 rounded text-[10px] font-bold border border-stone-200">유료 상품</span>
-                    <p class="text-xl font-extrabold text-stone-900">3,000원</p>
+    <!-- 하단 구매 버튼 (가로 길이 단축) -->
+    <div class="fixed bottom-0 left-0 w-full bg-white border-t border-stone-200 p-3 sm:p-4 z-50 shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.05)]">
+        <div class="max-w-3xl mx-auto flex justify-between items-center gap-3 sm:gap-4">
+            
+            <!-- 상품 정보 영역 -->
+            <div class="flex flex-col">
+                <p class="text-stone-500 text-[10px] sm:text-xs font-bold mb-0.5 sm:mb-1">체리 데이 다이어리</p>
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                    <span class="px-1.5 py-0.5 bg-stone-100 text-stone-600 rounded text-[9px] sm:text-[10px] font-bold border border-stone-200 shrink-0">유료 상품</span>
+                    <p class="text-lg sm:text-xl font-extrabold text-stone-900 shrink-0">3,000원</p>
                 </div>
             </div>
-            <div class="sm:hidden font-extrabold text-xl text-stone-900 shrink-0">3,000원</div>
-            	<button onclick="this.classList.toggle('text-rose-500'); this.classList.toggle('bg-rose-50'); this.classList.toggle('border-rose-200'); this.querySelector('svg').classList.toggle('fill-current');" class="hidden w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-white border border-stone-200 text-stone-400 flex items-center justify-center hover:bg-rose-50 hover:text-rose-500 hover:border-rose-200 transition shrink-0 shadow-sm">
-   				 <i data-lucide="heart" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-				</button>
-                <a href="https://litt.ly/loraticon/sale/QmitZre" target="_blank" class="flex-1 sm:w-64 h-12 sm:h-14 bg-stone-900 text-white rounded-xl font-bold text-base hover:bg-stone-800 transition shadow-lg flex items-center justify-center gap-2 px-1">
-                    <i data-lucide="shopping-bag" class="w-5 h-5"></i> 구매하러 가기
+
+            <div class="flex gap-2 justify-end items-center">
+                <!-- 찜하기 버튼 -->
+                <button onclick="this.classList.toggle('text-rose-500'); this.classList.toggle('bg-rose-50'); this.classList.toggle('border-rose-200'); this.querySelector('svg').classList.toggle('fill-current');" class="hidden w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-white border border-stone-200 text-stone-400 flex items-center justify-center hover:bg-rose-50 hover:text-rose-500 hover:border-rose-200 transition shrink-0 shadow-sm">
+    <i data-lucide="heart" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+</button>
+                
+                <!-- 구매하기 버튼 (수정됨: flex-1 제거 및 padding 조정으로 길이 단축) -->
+                <a href="https://litt.ly/loraticon/sale/QmitZre" target="_blank" class="px-5 sm:px-10 h-11 sm:h-14 bg-stone-900 text-white rounded-xl font-bold text-sm sm:text-base hover:bg-stone-800 transition shadow-lg flex items-center justify-center gap-1.5 sm:gap-2 shrink-0">
+                    <i data-lucide="shopping-bag" class="w-4 h-4 sm:w-5 h-5"></i> 구매하러 가기
                 </a>
             </div>
         </div>
@@ -336,7 +340,6 @@
             const badge = wrapper.querySelector('.slider-badge');
             const slides = container.querySelectorAll('[data-label]');
 
-            // 슬라이드 클릭 이동 로직
             if (btnLeft && btnRight) {
                 btnLeft.addEventListener('click', () => {
                     if (container.scrollLeft <= 5) {
@@ -355,14 +358,11 @@
                 });
             }
 
-            // 스크롤 시 라벨 고정 텍스트 업데이트 로직
             if (badge && slides.length > 0) {
                 container.addEventListener('scroll', () => {
                     const scrollPos = container.scrollLeft;
                     const containerWidth = container.clientWidth;
-                    // 현재 중앙에 가장 가까운 슬라이드 인덱스 계산
                     const activeIndex = Math.round(scrollPos / containerWidth);
-                    
                     if (slides[activeIndex]) {
                         badge.textContent = slides[activeIndex].getAttribute('data-label');
                     }
