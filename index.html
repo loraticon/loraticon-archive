@@ -46,8 +46,24 @@
     .card { background: #ffffff; border-radius: 20px; padding: 12px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.04); transition: transform 0.2s ease, box-shadow 0.2s; display: flex; flex-direction: column; text-decoration: none; }
     .card:active { transform: scale(0.96); }
     
-    .card-img-wrapper { position: relative; width: 100%; aspect-ratio: 1 / 1; margin-bottom: 12px; }
-    .card-img { width: 100%; height: 100%; border-radius: 14px; background-color: #f0f0f0; object-fit: cover; }
+    /* 💡 수정된 부분: 썸네일 영역 (모바일 찌그러짐 방지) */
+    .card-img-wrapper { 
+      position: relative; 
+      width: 100%; 
+      aspect-ratio: 1 / 1; 
+      margin-bottom: 12px; 
+      flex-shrink: 0; 
+    }
+    
+    /* 💡 수정된 부분: 썸네일 이미지 (잘림 방지 및 모바일 여백 버그 수정) */
+    .card-img { 
+      width: 100%; 
+      height: 100%; 
+      border-radius: 14px; 
+      background-color: #f0f0f0; 
+      object-fit: contain; 
+      display: block; 
+    }
     
     .price-badge { position: absolute; top: 8px; right: 8px; padding: 4px 8px; border-radius: 8px; font-size: 10px; font-weight: 800; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
     .price-free { background-color: #53C28B; color: #fff; }
@@ -83,7 +99,6 @@
   </div>
 
   <script>
-    // 🌟 상품 목록 데이터 (pageUrl 항목이 추가되었습니다!)
     const items = [
       {
         id: 1,
@@ -101,7 +116,7 @@
         desc: '연구생과 함께 만든 연구일지 시스템',
         image: './images/template/research-note/research-note.webp',
         isFree: true, 
-        pageUrl: 'detail_research_note.html' // 나중에 만들 다른 상세페이지 이름
+        pageUrl: 'detail_research_note.html'
       },
       {
         id: 3,
@@ -110,7 +125,7 @@
         desc: '일상의 작은 실천을 쌓는 100일 챌린지',
         image: "./images/template/100-day-challenge/100-day-challenge.webp",
         isFree: true, 
-        pageUrl: 'detail_100_day_challenge.html' // 나중에 만들 다른 상세페이지 이름
+        pageUrl: 'detail_100_day_challenge.html'
       },
       {
         id: 4,
@@ -137,7 +152,7 @@
         desc: '가볍게 쓸 수 있는 일기 다이어리',
         image: './images/template/daily-pick/daily-pick.webp',
         isFree: true, 
-        pageUrl: 'detail_daily_pick.html' // 나중에 만들 다른 상세페이지 이름
+        pageUrl: 'detail_daily_pick.html'
       },
       {
         id: 7,
@@ -146,14 +161,13 @@
         desc: '연말결산으로 한 해를 차분하게 정리',
         image: './images/template/year-end-review/year-end-review.webp',
         isFree: true, 
-        pageUrl: 'detail_year_end_review.html' // 나중에 만들 다른 상세페이지 이름
+        pageUrl: 'detail_year_end_review.html'
       },
-
       {
         id: 10,
         category: 'deco',
         title: '체리 데이 다이어리',
-        desc: '딱딱한 노션을 산뜻하게 바꿔줄 아이콘, 커버 이미지, 구분선 세트입니다.',
+        desc: '따뜻한 체크깅엄 패턴과 체리 테마 세트',
         image: './images/deco/cherry-day-dairy/cherry-day-dairy.webp',
         isFree: false,
         pageUrl: 'detail_cherryday_diary.html'
@@ -224,7 +238,6 @@
         const priceClass = item.isFree ? 'price-free' : 'price-paid';
         const priceText = item.isFree ? 'FREE' : 'PREMIUM';
 
-        // div 대신 a 태그를 사용하여 href로 페이지 이동
         const cardHTML = `
           <a href="${item.pageUrl}" class="card">
             <div class="card-img-wrapper">
