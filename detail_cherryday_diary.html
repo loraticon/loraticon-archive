@@ -60,7 +60,8 @@
             <button class="slider-left absolute left-[-10px] md:left-[-40px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-stone-100 items-center justify-center text-stone-400 hover:text-rose-500 z-30 transition hidden sm:flex">
                 <i data-lucide="chevron-left" class="w-6 h-6"></i>
             </button>
-            <button class="slider-right absolute right-[-10px] md:left-[-40px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-stone-100 items-center justify-center text-stone-400 hover:text-rose-500 z-30 transition hidden sm:flex">
+            <!-- 수정됨: 오른쪽 버튼의 위치를 right-로 변경 -->
+            <button class="slider-right absolute right-[-10px] md:right-[-40px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-stone-100 items-center justify-center text-stone-400 hover:text-rose-500 z-30 transition hidden sm:flex">
                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
             </button>
 
@@ -298,12 +299,41 @@
                         <span class="text-rose-400 font-bold mr-1">A.</span>하단의 '구매하러 가기' 버튼을 누르시면 상품 결제 페이지로 이동합니다.</br> 해당 페이지에서 결제 완료 직후, 파일은 자동으로 구매자의 이메일로 전달됩니다.
                     </div>
                 </details>
+                <!-- 수정됨: 누락된 환불 규정 추가 -->
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-rose-400">Q.</span> 결제 후 환불이 가능한가요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-rose-400 font-bold mr-1">A.</span> 디지털 다운로드 상품의 특성상 파일이 다운로드 된 이후에는 교환 및 환불이 불가능합니다.</br> 구매 전 구성을 꼼꼼히 확인해 주세요.
+                    </div>
+                </details>
+                <!-- 수정됨: 누락된 저작권 및 사용 범위 안내 추가 -->
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-rose-400">Q.</span> 구매한 파일의 저작권 및 사용 범위는 어떻게 되나요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-rose-400 font-bold mr-1 block mb-3">A. 본 상품은 저작권법의 보호를 받으며, 아래의 규정을 반드시 지켜주셔야 합니다.</span>
+                        <ul class="space-y-1.5 ml-1 list-disc list-inside">
+                            <li><span class="font-bold text-stone-700">개인 용도</span>로만 사용 가능합니다.</li>
+                            <li><span class="font-bold text-stone-700">구매자 본인 계정</span>에서만 사용 가능합니다.</li>
+                            <li>원작자의 동의 없는 <span class="font-bold text-stone-700">2차 가공 및 재배포를 금지</span>합니다.</li>
+                            <li><span class="font-bold text-stone-700">상업적 사용</span>은 절대 불가합니다.</li>
+                            <li><span class="font-bold text-stone-700">파일 공유</span>(다운로드 링크 전달 포함)를 금지합니다.</li>
+                            <li>템플릿/파일을 <span class="font-bold text-stone-700">NFT·AI 학습용 데이터</span>로 사용할 수 없습니다.</li>
+                            <li>비슷한 구성, 소스 코드, 이미지를 그대로 <span class="font-bold text-stone-700">재사용하거나 판매하는 것을 금지</span>합니다.</li>
+                        </ul>
+                    </div>
+                </details>
             </div>
         </section>
 
     </main>
 
-    <!-- 하단 구매 버튼 (가로 길이 단축) -->
+    <!-- 하단 구매 버튼 (하트 아이콘 제거됨) -->
     <div class="fixed bottom-0 left-0 w-full bg-white border-t border-stone-200 p-3 sm:p-4 z-50 shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.05)]">
         <div class="max-w-3xl mx-auto flex justify-between items-center gap-3 sm:gap-4">
             
@@ -316,13 +346,8 @@
                 </div>
             </div>
 
-            <div class="flex gap-2 justify-end items-center">
-                <!-- 찜하기 버튼 -->
-                <button onclick="this.classList.toggle('text-rose-500'); this.classList.toggle('bg-rose-50'); this.classList.toggle('border-rose-200'); this.querySelector('svg').classList.toggle('fill-current');" class="hidden w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-white border border-stone-200 text-stone-400 flex items-center justify-center hover:bg-rose-50 hover:text-rose-500 hover:border-rose-200 transition shrink-0 shadow-sm">
-    <i data-lucide="heart" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-</button>
-                
-                <!-- 구매하기 버튼 (수정됨: flex-1 제거 및 padding 조정으로 길이 단축) -->
+            <div class="flex justify-end items-center">
+                <!-- 구매하기 버튼 (단독 배치) -->
                 <a href="https://litt.ly/loraticon/sale/QmitZre" target="_blank" class="px-5 sm:px-10 h-11 sm:h-14 bg-stone-900 text-white rounded-xl font-bold text-sm sm:text-base hover:bg-stone-800 transition shadow-lg flex items-center justify-center gap-1.5 sm:gap-2 shrink-0">
                     <i data-lucide="shopping-bag" class="w-4 h-4 sm:w-5 h-5"></i> 구매하러 가기
                 </a>
