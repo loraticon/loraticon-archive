@@ -85,7 +85,7 @@
       <img src="./images/profile/loraticon.webp" onerror="this.src='https://via.placeholder.com/150'" alt="프로필" class="profile-img">
       <h1 class="profile-name">Loraticon</h1>
       <p class="profile-desc">
-        찾기 힘들었던 노션 시리즈를 정리한 페이지입니다.
+        평범한 노션을 나만의 특별한 공간으로 만들어 보세요.
       </p>
     </div>
 
@@ -130,7 +130,7 @@
       {
         id: 4,
         category: 'template',
-        title: '루틴 플래너',
+        title: '루틴 계획표',
         desc: '시간표와 그날의 기록을 남길 수 있는 루틴 플래너',
         image: './images/template/routine-planner/routine-planner.webp',
         isFree: true, 
@@ -151,7 +151,7 @@
         title: '데일리 픽',
         desc: '가볍게 쓸 수 있는 일기 다이어리',
         image: './images/template/daily-pick/daily-pick.webp',
-        isFree: true, 
+        isFree: null, /* 공백 예시를 위해 null로 설정했습니다. 속성을 아예 지워도 됩니다. */
         pageUrl: 'detail_daily_pick.html'
       },
       {
@@ -169,7 +169,6 @@
         title: '체리 데이 다이어리',
         desc: '따뜻한 체크깅엄 패턴과 체리 테마 세트',
         image: './images/deco/cherry-day-dairy/cherry-day-dairy.webp',
-        isFree: false,
         pageUrl: 'detail_cherryday_diary.html'
       },
       {
@@ -178,16 +177,14 @@
         title: '봄꽃 하늘',
         desc: '딱딱한 노션을 산뜻하게 바꿔줄 아이콘, 커버 이미지, 구분선 세트입니다.',
         image: './images/deco/spring-flower/spring-flower.webp',
-        isFree: false,
         pageUrl: 'detail_spring_flower.html'
       },
       {
         id: 12,
         category: 'deco',
-        title: '몽글몽글 스노우데이즈',
+        title: '몽글몽글 스노우 데이즈',
         desc: '딱딱한 노션을 산뜻하게 바꿔줄 아이콘, 커버 이미지, 구분선 세트입니다.',
         image: './images/deco/snow-days/snow-days.webp',
-        isFree: false,
         pageUrl: 'detail_snow_days.html'
       },
      {
@@ -195,25 +192,19 @@
         category: 'deco',
         title: '행복 줍줍 노트',
         desc: '딱딱한 노션을 산뜻하게 바꿔줄 아이콘, 커버 이미지, 구분선 세트입니다.',
-        image: './images/deco/collect-happiness/collect-happiness.webp',
-        isFree: false,
-        pageUrl: 'detail_collect_happiness.html'
-       },
-     {
-        id: 14,
-        category: 'deco',
-        title: '모동숲 테마',
-        desc: '딱딱한 노션을 산뜻하게 바꿔줄 아이콘, 커버 이미지, 구분선 세트입니다.',
-        image: './images/deco/acnh-normal/acnh-normal.webp',
-        isFree: true,
-        pageUrl: 'detail_acnh_normal.html'
+        image: './images/deco/collect-happiness2/collect-happiness2.webp',
+        pageUrl: 'detail_collect_happiness2.html'
        }
      ];
 
-    let currentCategory = 'template';
+    // 변경된 부분: sessionStorage를 확인하여 마지막 상태를 불러옵니다. 없으면 'template' 적용.
+    let currentCategory = sessionStorage.getItem('lastCategory') || 'template';
 
     function setCategory(category) {
       currentCategory = category;
+      // 변경된 부분: 탭을 클릭할 때마다 현재 상태를 sessionStorage에 저장합니다.
+      sessionStorage.setItem('lastCategory', category);
+
       const tabTemplate = document.getElementById('tab-template');
       const tabDeco = document.getElementById('tab-deco');
       
@@ -235,14 +226,20 @@
       filteredItems.forEach(item => {
         const badgeClass = item.category === 'template' ? 'badge-template' : 'badge-deco';
         const typeText = item.category === 'template' ? '템플릿' : '꾸미기';
-        const priceClass = item.isFree ? 'price-free' : 'price-paid';
-        const priceText = item.isFree ? 'FREE' : 'PREMIUM';
+        
+        // 라벨 공백 처리 로직 (isFree가 true나 false가 아니면 빈 문자열)
+        let priceBadgeHTML = '';
+        if (item.isFree === true) {
+          priceBadgeHTML = `<div class="price-badge price-free">FREE</div>`;
+        } else if (item.isFree === false) {
+          priceBadgeHTML = `<div class="price-badge price-paid">PREMIUM</div>`;
+        }
 
         const cardHTML = `
           <a href="${item.pageUrl}" class="card">
             <div class="card-img-wrapper">
               <img src="${item.image}" alt="${item.title}" class="card-img">
-              <div class="price-badge ${priceClass}">${priceText}</div>
+              ${priceBadgeHTML}
             </div>
             <span class="card-badge ${badgeClass}">${typeText}</span>
             <h3 class="card-title">${item.title}</h3>
@@ -253,7 +250,8 @@
       });
     }
 
-    renderGrid();
+    // 변경된 부분: 단순 renderGrid() 대신, 저장된 카테고리 탭 버튼 색상까지 맞춰주기 위해 setCategory()를 호출합니다.
+    setCategory(currentCategory);
   </script>
 </body>
 </html>
