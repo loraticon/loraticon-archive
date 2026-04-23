@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>행줍노트 노션 꾸미기 세트 - loraticon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.260.0/lucide.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #FAFAF9; 
+            color: #292524;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .scroll-smooth { scroll-behavior: smooth; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: slideDown 0.3s ease-in-out; }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-green-200 selection:text-green-900 pb-24">
+
+    <!-- 네비게이션 바 -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
+        <div class="max-w-4xl mx-auto px-4 h-14 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-1.5 cursor-pointer text-stone-500 hover:text-stone-800 transition font-medium">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i> 뒤로가기
+            </a>
+            <div class="font-bold text-lg text-stone-800">꾸미기 세트</div>
+            <div class="w-20"></div>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 bg-white shadow-sm min-h-screen">
+        
+        <!-- 1. 헤더 -->
+        <header class="text-center mb-12">
+            <div class="flex flex-wrap justify-center gap-2 mb-6">
+                <span class="px-3 py-1 bg-green-50 text-green-500 border border-green-100 text-sm font-bold rounded-full">#마스킹테이프</span>
+                <span class="px-3 py-1 bg-green-50 text-green-500 border border-green-100 text-sm font-bold rounded-full">#세잎클로버</span>
+                <span class="px-3 py-1 bg-green-50 text-green-500 border border-green-100 text-sm font-bold rounded-full">#그린</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-stone-900 mb-10 word-keep">행줍 노트</h1>
+            <p class="text-base sm:text-lg text-stone-600 mb-8 max-w-2xl mx-auto leading-relaxed word-keep">
+                행복 줍줍 노트의 꾸미기 세트 확장판☘️<br/>
+                평범한 하루의 기록도 기분 좋은 초록빛으로 물들여봐요.
+            </p>
+        </header>
+
+        <!-- 2. 아이패드 목업 슬라이더 (메인) -->
+        <section class="mb-20 px-2 sm:px-0 relative slider-wrapper max-w-2xl mx-auto">
+            <button class="slider-left absolute left-[-10px] md:left-[-40px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-stone-100 items-center justify-center text-stone-400 hover:text-green-500 z-30 transition hidden sm:flex">
+                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            </button>
+            <!-- 수정됨: 오른쪽 버튼의 위치를 right-로 변경 -->
+            <button class="slider-right absolute right-[-10px] md:right-[-40px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-stone-100 items-center justify-center text-stone-400 hover:text-green-500 z-30 transition hidden sm:flex">
+                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </button>
+
+            <div class="relative border-[10px] sm:border-[16px] border-stone-800 rounded-[1.5rem] sm:rounded-[2.5rem] shadow-2xl aspect-[4/3] bg-stone-800">
+                <div class="absolute top-1/2 -left-2 sm:-left-4 -translate-y-1/2 w-1 sm:w-2 h-10 sm:h-12 bg-stone-900 rounded-r-md z-20"></div>
+                <div class="absolute top-10 -right-2 sm:-right-4 w-1 sm:w-2 h-8 sm:h-10 bg-stone-900 rounded-l-md z-20"></div>
+                
+                <div class="w-full h-full overflow-hidden rounded-[14px] sm:rounded-[24px] bg-stone-100 relative">
+                    <!-- 고정 라벨 -->
+                    <div class="slider-badge absolute bottom-4 right-4 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-sm z-20">1 / 2 메인 페이지</div>
+                    
+                    <div class="slider-container flex overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth w-full h-full">
+                        <div class="w-full h-full flex-none snap-center" data-label="1 / 2 메인 페이지">
+                            <img src="./images/deco/collect-happiness2/slide1.webp" onerror="this.src='https://placehold.co/800x600/fdf2f8/ec4899?text='" alt="테마 적용 메인" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full h-full flex-none snap-center" data-label="2 / 2 일기 페이지">
+                            <img src="./images/deco/collect-happiness2/slide2.webp" alt="상세 화면 1" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-sm text-stone-400 mt-5 sm:hidden flex items-center justify-center gap-1.5">
+                <i data-lucide="hand" class="w-4 h-4"></i> 좌우로 스와이프하여 확인하세요
+            </p>
+        </section>
+
+        <!-- 2.5 구성품 안내 영역 -->
+        <section class="mb-20 max-w-2xl mx-auto">
+            <div class="bg-stone-50 border border-stone-100 rounded-[2rem] p-8 shadow-sm">
+                <h2 class="text-xl font-bold text-stone-900 mb-6 text-center flex items-center justify-center gap-2">
+                    <i data-lucide="package-open" class="text-green-400 w-5 h-5"></i> 풍성하게 꽉 채운 구성품 안내
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-stone-100 flex flex-col items-center justify-center aspect-square transition hover:-translate-y-1 hover:shadow-md">
+                        <span class="text-3xl mb-2">🖼️</span>
+                        <div class="font-extrabold text-stone-800 text-lg mb-0.5">4개</div>
+                        <div class="text-xs font-bold text-stone-500">메인 커버 이미지</div>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-stone-100 flex flex-col items-center justify-center aspect-square transition hover:-translate-y-1 hover:shadow-md">
+                        <span class="text-3xl mb-2">✨</span>
+                        <div class="font-extrabold text-stone-800 text-lg mb-0.5">20개</div>
+                        <div class="text-xs font-bold text-stone-500">페이지 아이콘</div>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-stone-100 flex flex-col items-center justify-center aspect-square transition hover:-translate-y-1 hover:shadow-md">
+                        <span class="text-3xl mb-2">🎀</span>
+                        <div class="font-extrabold text-stone-800 text-lg mb-0.5">22개</div>
+                        <div class="text-xs font-bold text-stone-500">이모지</div>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm border border-stone-100 flex flex-col items-center justify-center aspect-square transition hover:-translate-y-1 hover:shadow-md">
+                        <span class="text-3xl mb-2">💻</span>
+                        <div class="font-extrabold text-stone-800 text-lg mb-0.5">1개</div>
+                        <div class="text-xs font-bold text-stone-500">노션 템플릿</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2.7 전체 구성품 슬라이더 -->
+        <section class="mb-24 max-w-3xl mx-auto">
+            <h2 class="text-2xl font-bold text-stone-900 mb-8 text-center flex items-center justify-center gap-2">
+                <i data-lucide="layout-dashboard" class="text-green-400 w-6 h-6"></i> 세트 전체 구성
+            </h2>
+            <div class="relative slider-wrapper bg-white rounded-[2.5rem] p-3 shadow-sm border border-stone-200 aspect-[4/3] sm:aspect-[16/9]">
+                <div class="relative w-full h-full rounded-[2rem] overflow-hidden bg-white">
+                    <!-- 고정 라벨 -->
+                    <div class="slider-badge absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold text-white shadow-sm z-20">1 / 5 메인 커버</div>
+                    
+                    <button class="slider-left absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/90 backdrop-blur rounded-full shadow-md border border-stone-100 items-center justify-center text-stone-500 hover:text-green-500 z-30 transition hidden sm:flex">
+                        <i data-lucide="chevron-left" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </button>
+                    <button class="slider-right absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/90 backdrop-blur rounded-full shadow-md border border-stone-100 items-center justify-center text-stone-500 hover:text-green-500 z-30 transition hidden sm:flex">
+                        <i data-lucide="chevron-right" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </button>
+
+                    <div class="slider-container flex overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth w-full h-full">
+                        <div class="w-full h-full flex-none snap-center" data-label="1 / 5 메인 커버">
+                            <img src="./images/deco/collect-happiness2/all1.webp" alt="메인 커버" class="w-full h-full object-contain">
+                        </div>
+                        <div class="w-full h-full flex-none snap-center" data-label="2 / 5 페이지 아이콘">
+                            <img src="./images/deco/collect-happiness2/all2.webp" alt="아이콘 1" class="w-full h-full object-contain">
+                        </div>
+                        <div class="w-full h-full flex-none snap-center" data-label="3 / 5 페이지 아이콘">
+                            <img src="./images/deco/collect-happiness2/all3.webp" alt="아이콘 2" class="w-full h-full object-contain">
+                        </div>
+                        <div class="w-full h-full flex-none snap-center" data-label="4 / 5 이모지">
+                            <img src="./images/deco/collect-happiness2/all4.webp" alt="이모지 1" class="w-full h-full object-contain">
+                        </div>
+                        <div class="w-full h-full flex-none snap-center" data-label="5 / 5 이모지">
+                            <img src="./images/deco/collect-happiness2/all5.webp" alt="이모지 2" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 미리보기 -->
+        <section class="mb-24 relative max-w-xl mx-auto">
+            <h2 class="text-2xl font-bold text-stone-900 mb-10 text-center flex items-center justify-center gap-2">
+                <i data-lucide="image" class="text-green-400 w-6 h-6"></i> 미리보기
+            </h2>
+
+            <div class="space-y-20">
+                <!-- 미리보기 1 -->
+                <div class="group">
+                    <div class="bg-white rounded-[2rem] p-4 mb-6 shadow-sm border border-stone-200">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="rounded-xl overflow-hidden bg-green-50 aspect-video relative">
+                                <img src="./images/deco/collect-happiness2/cover1.webp" onerror="this.src='https://placehold.co/800x450/fecdd3/e11d48?text='" alt="커버 1" class="w-full h-full object-cover transition hover:scale-105">
+                            </div>
+                            <div class="rounded-xl overflow-hidden bg-green-50 aspect-video relative">
+                                <img src="./images/deco/collect-happiness2/cover2.webp" onerror="this.src='https://placehold.co/800x450/fecdd3/be123c?text='" alt="커버 2" class="w-full h-full object-cover transition hover:scale-105">
+                            </div>
+                            <div class="rounded-xl overflow-hidden bg-green-50 aspect-video relative">
+                                <img src="./images/deco/collect-happiness2/cover3.webp" onerror="this.src='https://placehold.co/800x450/fecdd3/9f1239?text='" alt="커버 3" class="w-full h-full object-cover transition hover:scale-105">
+                            </div>
+                            <div class="rounded-xl overflow-hidden bg-green-50 aspect-video relative">
+                                <img src="./images/deco/collect-happiness2/cover4.webp" onerror="this.src='https://placehold.co/800x450/fecdd3/881337?text='" alt="커버 4" class="w-full h-full object-cover transition hover:scale-105">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center px-4">
+                        <span class="text-green-500 font-bold text-sm mb-2 block">01. Main Covers</span>
+                        <h3 class="text-xl font-bold text-stone-800 mb-3">초록초록한 싱그러움이 가득한 커버</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed break-keep max-w-md mx-auto">
+                            싱그러운 초록빛을 페이지에 담아보세요.</br> 페이지마다 다른 커버를 골라보는 재미가 있어요.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 미리보기 2 -->
+                <div class="group">
+                    <div class="relative slider-wrapper bg-white rounded-[2rem] p-2 aspect-video mb-6 shadow-sm border border-stone-200">
+                        <div class="relative w-full h-full rounded-[1.5rem] overflow-hidden bg-orange-50">
+                            <!-- 고정 라벨 -->
+                            <!-- <div class="slider-badge absolute bottom-4 right-4 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-sm z-20">1 / 2</div>
+                            
+                            <button class="slider-left absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur rounded-full shadow-md border border-stone-100 items-center justify-center text-stone-500 hover:text-green-500 z-30 transition hidden sm:flex">
+                                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                            </button>
+                            <button class="slider-right absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur rounded-full shadow-md border border-stone-100 items-center justify-center text-stone-500 hover:text-green-500 z-30 transition hidden sm:flex">
+                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                            </button>-->
+
+                            <div class="slider-container flex overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth w-full h-full">
+                                <div class="w-full flex-none snap-center" data-label="1 / 2">
+                                    <img src="./images/deco/collect-happiness2/icon1.webp" onerror="this.src='https://placehold.co/800x450/ffedd5/f97316?text='" alt="아이콘 1" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center px-4">
+                        <span class="text-green-500 font-bold text-sm mb-2 block">02. Page Icons</span>
+                        <h3 class="text-xl font-bold text-stone-800 mb-3">세잎클로버와 주접 스티커</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed break-keep max-w-md mx-auto">
+			    행복과 따뜻한 한마디가 담긴 </br>주접 스티커는 커버로 적용해도 귀여워요.</p>
+                    </div>
+                </div>
+
+                <!-- 미리보기 3 -->
+                <div class="group">
+                    <div class="relative slider-wrapper bg-white rounded-[2rem] p-2 aspect-video mb-6 shadow-sm border border-stone-200">
+                        <div class="relative w-full h-full rounded-[1.5rem] overflow-hidden bg-stone-50">
+                            <!-- 고정 라벨 -->
+                            <div class="slider-badge absolute bottom-4 right-4 bg-stone-900/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-sm z-20">1 / 4</div>
+                            
+                            <button class="slider-left absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur rounded-full shadow-md border border-stone-100 items-center justify-center text-stone-500 hover:text-green-500 z-30 transition hidden sm:flex">
+                                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                            </button>
+                            <button class="slider-right absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur rounded-full shadow-md border border-stone-100 items-center justify-center text-stone-500 hover:text-green-500 z-30 transition hidden sm:flex">
+                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                            </button>
+
+                            <div class="slider-container flex overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth w-full h-full">
+                                <div class="w-full flex-none snap-center" data-label="1 / 4">
+                                    <img src="./images/deco/collect-happiness2/emoji1.webp" alt="이모지 1" class="w-full h-full object-cover">
+                                </div>
+                                <div class="w-full flex-none snap-center" data-label="2 / 4">
+                                    <img src="./images/deco/collect-happiness2/emoji2.webp" alt="이모지 2" class="w-full h-full object-cover">
+                                </div>
+                                <div class="w-full flex-none snap-center" data-label="3 / 4">
+                                    <img src="./images/deco/collect-happiness2/emoji3.webp" alt="이모지 3" class="w-full h-full object-cover">
+                                </div>
+                                <div class="w-full flex-none snap-center" data-label="4 / 4">
+                                    <img src="./images/deco/collect-happiness2/emoji4.webp" alt="이모지 3" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center px-4">
+                        <span class="text-green-500 font-bold text-sm mb-2 block">03. Emojis</span>
+                        <h3 class="text-xl font-bold text-stone-800 mb-3">마테 이모지</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed break-keep max-w-md mx-auto">
+                            녹색 마스킹 테이프를 쭉쭉 늘려서 페이지를 장식할 수 있어요. </br> 체크리스트와 콜아웃에 세잎클로버를 넣어봐요.</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 가이드 안내 -->
+        <section class="mb-20">
+            <div class="bg-orange-50 border border-orange-100 rounded-3xl p-8 flex flex-col items-center text-center max-w-2xl mx-auto">
+                <div class="flex gap-2 mb-4">
+                    <div class="w-10 h-10 bg-white rounded-lg shadow-sm flex items-center justify-center text-orange-500">
+                        <i data-lucide="palette" class="w-6 h-6"></i>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-stone-800 mb-2">노션 꾸미기 가이드 포함</h3>
+                <p class="text-stone-600 text-sm break-keep">아이콘은 어떻게 바꾸나요? 커버는 어떻게 넣죠?</br> 걱정하지 마세요!</br> 초보자도 쉽게 따라 할 수 있는 다꾸 적용 가이드가 동봉되어 있습니다.</p>
+            </div>
+        </section>
+
+        <!-- 6. FAQ -->
+        <section class="border-t border-stone-100 pt-16 mb-20">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-stone-900 mb-2">자주 묻는 질문 (FAQ)</h2>
+                <p class="text-stone-500 text-sm">구매 전 궁금하신 점을 미리 확인해 보세요.</p>
+            </div>
+            <div class="max-w-2xl mx-auto space-y-4">
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-green-400">Q.</span> 아이패드나 모바일에서도 적용이 가능한가요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-green-400 font-bold mr-1">A.</span>아이패드, 모바일에서도 적용할 수 있지만 기기별로 기능의 한계가 있습니다.</br> 노션 꾸미기는 데스크톱(PC)로 하는 것을 추천해요.
+                    </div>
+                </details>
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-green-400">Q.</span> 구매하면 파일은 어떻게 받나요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-green-400 font-bold mr-1">A.</span>하단의 '구매하러 가기' 버튼을 누르시면 상품 결제 페이지로 이동합니다.</br> 해당 페이지에서 결제 완료 직후, 파일은 자동으로 구매자의 이메일로 전달됩니다.
+                    </div>
+                </details>
+                <!-- 누락된 환불 규정 및 저작권 안내 복구 -->
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-green-400">Q.</span> 결제 후 환불이 가능한가요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-green-400 font-bold mr-1">A.</span> 디지털 다운로드 상품의 특성상 파일이 다운로드 된 이후에는 교환 및 환불이 불가능합니다.</br> 구매 전 구성을 꼼꼼히 확인해 주세요.
+                    </div>
+                </details>
+                <details class="group bg-white border border-stone-200 rounded-2xl overflow-hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-stone-800 hover:bg-stone-50 transition">
+                        <span class="flex items-center gap-2"><span class="text-green-400">Q.</span> 구매한 파일의 저작권 및 사용 범위는 어떻게 되나요?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="p-5 pt-0 text-stone-600 text-sm leading-relaxed border-t border-stone-100 bg-stone-50/50 break-keep">
+                        <span class="text-green-400 font-bold mr-1 block mb-3">A. 본 상품은 저작권법의 보호를 받으며, 아래의 규정을 반드시 지켜주셔야 합니다.</span>
+                        <ul class="space-y-1.5 ml-1 list-disc list-inside">
+                            <li><span class="font-bold text-stone-700">개인 용도</span>로만 사용 가능합니다.</li>
+                            <li><span class="font-bold text-stone-700">구매자 본인 계정</span>에서만 사용 가능합니다.</li>
+                            <li>원작자의 동의 없는 <span class="font-bold text-stone-700">2차 가공 및 재배포를 금지</span>합니다.</li>
+                            <li><span class="font-bold text-stone-700">상업적 사용</span>은 절대 불가합니다.</li>
+                            <li><span class="font-bold text-stone-700">파일 공유</span>(다운로드 링크 전달 포함)를 금지합니다.</li>
+                            <li>템플릿/파일을 <span class="font-bold text-stone-700">NFT·AI 학습용 데이터</span>로 사용할 수 없습니다.</li>
+                            <li>비슷한 구성, 소스 코드, 이미지를 그대로 <span class="font-bold text-stone-700">재사용하거나 판매하는 것을 금지</span>합니다.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- 7. 관련 글 영역 복구 -->
+        <section class="border-t border-stone-100 pt-16 pb-8">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-stone-900 mb-2">노션 꾸미기 추천 꿀팁</h2>
+                    <p class="text-stone-500 text-sm">노션 꾸미기가 막막할 때 읽어보세요✨</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <a href="https://m.blog.naver.com/loraticon/224147276191" class="group block">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                        <img src="./images/deco/collect-happiness2/blog1.webp" onerror="this.src='https://placehold.co/400x300/e2e8f0/64748b?text='" alt="블로그 글 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="px-2 py-0.5 bg-green-50 text-green-600 border border-green-100 rounded text-[10px] font-bold">N 블로그</span>
+                        <span class="px-2 py-0.5 bg-stone-50 text-stone-500 border border-stone-200 rounded text-[10px] font-bold">활용 꿀팁</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 group-hover:text-green-500 transition line-clamp-2 mb-1">노션 꾸미기 세트｜ 행복 줍줍 노트 테마 구성 소개</h3>
+                    <p class="text-xs text-stone-500 line-clamp-2">행줍 노트 세트를 활용한 모습을 보여드립니다.</p>
+                </a>
+                
+                <a href="https://m.blog.naver.com/loraticon/224077562536" class="group block">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                        <img src="./images/deco/collect-happiness2/blog2.webp" onerror="this.src='https://placehold.co/400x300/f8fafc/94a3b8?text='" alt="블로그 글 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="px-2 py-0.5 bg-green-50 text-green-600 border border-green-100 rounded text-[10px] font-bold">N 블로그</span>
+                        <span class="px-2 py-0.5 bg-stone-50 text-stone-500 border border-stone-200 rounded text-[10px] font-bold">노션 꿀팁</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 group-hover:text-green-500 transition line-clamp-2 mb-1">노션 커스텀 아이콘 추가하기</h3>
+                    <p class="text-xs text-stone-500 line-clamp-2">노션에 나만의 아이콘을 이모지로 추가하는 방법을 알려드려요.</p>
+                </a>
+
+                <a href="https://m.blog.naver.com/loraticon/224202408966" class="group block">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 mb-3">
+                        <img src="./images/deco/collect-happiness2/blog3.webp" onerror="this.src='https://placehold.co/400x300/f1f5f9/475569?text='" alt="블로그 글 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <span class="px-2 py-0.5 bg-green-50 text-green-600 border border-green-100 rounded text-[10px] font-bold">N 블로그</span>
+                        <span class="px-2 py-0.5 bg-stone-50 text-stone-500 border border-stone-200 rounded text-[10px] font-bold">노션 꿀팁</span>
+                    </div>
+                    <h3 class="font-bold text-stone-800 group-hover:text-green-500 transition line-clamp-2 mb-1">열 나누기 하는 방법과 주의점</h3>
+                    <p class="text-xs text-stone-500 line-clamp-2">노션에서 열나누기를 하는 방법과 많이 사용하면 안되는 주의점을 안내합니다.</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 하단 구매 버튼 (하트 아이콘 제거됨) -->
+    <div class="fixed bottom-0 left-0 w-full bg-white border-t border-stone-200 p-3 sm:p-4 z-50 shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.05)]">
+        <div class="max-w-3xl mx-auto flex justify-between items-center gap-3 sm:gap-4">
+            
+            <!-- 상품 정보 영역 -->
+            <div class="flex flex-col">
+                <p class="text-stone-500 text-[10px] sm:text-xs font-bold mb-0.5 sm:mb-1">행줍 노트</p>
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                    <span class="px-1.5 py-0.5 bg-stone-100 text-stone-600 rounded text-[9px] sm:text-[10px] font-bold border border-stone-200 shrink-0">유료 상품</span>
+                    <p class="text-lg sm:text-xl font-extrabold text-stone-900 shrink-0">2,500원</p>
+                </div>
+            </div>
+
+            <div class="flex justify-end items-center">
+                <!-- 구매하기 버튼 (단독 배치) -->
+                <a href="https://litt.ly/loraticon/sale/1hT4thy" target="_blank" class="px-5 sm:px-10 h-11 sm:h-14 bg-stone-900 text-white rounded-xl font-bold text-sm sm:text-base hover:bg-stone-800 transition shadow-lg flex items-center justify-center gap-1.5 sm:gap-2 shrink-0">
+                    <i data-lucide="shopping-bag" class="w-4 h-4 sm:w-5 h-5"></i> 구매하러 가기
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
+            const container = wrapper.querySelector('.slider-container');
+            const btnLeft = wrapper.querySelector('.slider-left');
+            const btnRight = wrapper.querySelector('.slider-right');
+            const badge = wrapper.querySelector('.slider-badge');
+            const slides = container.querySelectorAll('[data-label]');
+
+            if (btnLeft && btnRight) {
+                btnLeft.addEventListener('click', () => {
+                    if (container.scrollLeft <= 5) {
+                        container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
+                    } else {
+                        container.scrollBy({ left: -container.clientWidth, behavior: 'smooth' });
+                    }
+                });
+                btnRight.addEventListener('click', () => {
+                    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+                    if (container.scrollLeft >= maxScrollLeft - 5) {
+                        container.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        container.scrollBy({ left: container.clientWidth, behavior: 'smooth' });
+                    }
+                });
+            }
+
+            if (badge && slides.length > 0) {
+                container.addEventListener('scroll', () => {
+                    const scrollPos = container.scrollLeft;
+                    const containerWidth = container.clientWidth;
+                    const activeIndex = Math.round(scrollPos / containerWidth);
+                    if (slides[activeIndex]) {
+                        badge.textContent = slides[activeIndex].getAttribute('data-label');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
