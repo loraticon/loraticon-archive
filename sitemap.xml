@@ -1,16 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://loraticon.github.io/loraticon-archive/index.html</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://loraticon.github.io/loraticon-archive/</loc>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- 네이버 블로그 링크들 -->
+  
   <url>
-    <loc>https://m.blog.naver.com/loraticon/224234123853</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://loraticon.github.io/loraticon-archive/detail_to_do_list.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://loraticon.github.io/loraticon-archive/detail_research_note.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://loraticon.github.io/loraticon-archive/detail_100_day_challenge.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://loraticon.github.io/loraticon-archive/detail_routine_planner.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://loraticon.github.io/loraticon-archive/detail_collect_happiness.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://loraticon.github.io/loraticon-archive/detail_daily_pick.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://loraticon.github.io/loraticon-archive/detail_year_end_review.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://loraticon.github.io/loraticon-archive/detail_cherryday_diary.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://loraticon.github.io/loraticon-archive/detail_spring_flower.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://loraticon.github.io/loraticon-archive/detail_snow_days.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://loraticon.github.io/loraticon-archive/detail_collect_happiness2.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
