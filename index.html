@@ -101,14 +101,32 @@
   </div>
 
   <script type="application/ld+json">
-    const items = [
-      {
-        "@context": "https://schema.org",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "로라티콘",
+      "alternateName": "Loraticon",
+      "url": "https://loraticon.github.io/"
+    },
+    {
+      "@type": "CollectionPage",
+      "name": "로라티콘 아카이브",
+      "url": "https://loraticon.github.io/loraticon-archive/",
+      "description": "유용한 노션 템플릿을 만들고 공유해요",
+      "isPartOf": {
         "@type": "WebSite",
         "name": "로라티콘",
-        "alternateName": "Loraticon",
         "url": "https://loraticon.github.io/"
-      },
+      }
+    }
+  ]
+}
+  </script>
+
+  <script>
+    const items = [
       {
         id: 1,
         category: 'template',
@@ -261,6 +279,7 @@
 
     // 변경된 부분: 단순 renderGrid() 대신, 저장된 카테고리 탭 버튼 색상까지 맞춰주기 위해 setCategory()를 호출합니다.
     setCategory(currentCategory);
+  
   </script>
 </body>
 </html>
