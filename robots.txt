@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://loraticon.github.io/loraticon-archive/sitemap.xml
