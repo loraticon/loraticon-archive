@@ -47,9 +47,10 @@
     .profile-name { font-size: 24px; font-weight: 800; margin: 0 0 10px 0; color: #4A3E3D; }
     .profile-desc { font-size: 14px; color: #777; line-height: 1.5; word-break: keep-all; }
 
-    .chip-container { display: flex; gap: 8px; overflow-x: auto; margin-bottom: 24px; padding-bottom: 4px; -ms-overflow-style: none; scrollbar-width: none; }
+    .chip-container { display: flex; gap: 8px; width: 100%; max-width: 100%; overflow-x: auto; overflow-y: hidden; margin-bottom: 24px; padding-bottom: 4px; -webkit-overflow-scrolling: touch; overscroll-behavior-inline: contain; scroll-behavior: smooth; touch-action: pan-x; cursor: grab; -ms-overflow-style: none; scrollbar-width: none; }
     .chip-container::-webkit-scrollbar { display: none; }
-    .chip { flex: none; padding: 10px 20px; border-radius: 24px; font-size: 14px; font-weight: 700; cursor: pointer; border: none; transition: all 0.2s; }
+    .chip-container.dragging { cursor: grabbing; scroll-behavior: auto; user-select: none; }
+    .chip { flex: none; padding: 10px 20px; border-radius: 24px; font-size: 14px; font-weight: 700; cursor: pointer; border: none; transition: all 0.2s; text-decoration: none; }
     .chip.active { background-color: #4A3E3D; color: #fff; }
     .chip.inactive { background-color: #F0EBE9; color: #8A817F; }
     .chip.inactive:hover { background-color: #E6DFDD; }
@@ -87,24 +88,6 @@
 
     .card-title { font-size: 15px; font-weight: 700; margin: 0 0 6px 0; line-height: 1.3; word-break: keep-all; color: #333; }
     .card-desc { font-size: 12px; color: #888; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin: 0; }
-    .blog-index { margin-top: 42px; }
-    .blog-index h2 { margin: 0 0 8px; color: #4A3E3D; font-size: 22px; }
-    .blog-index-intro { margin: 0 0 18px; color: #777; font-size: 14px; line-height: 1.6; }
-    .blog-link-list { display: grid; gap: 10px; }
-    .blog-link { display: block; padding: 14px 16px; border: 1px solid #eee7e4; border-radius: 14px; background: #fff; color: #4A3E3D; text-decoration: none; font-size: 14px; font-weight: 700; line-height: 1.45; }
-    .blog-link:hover { border-color: #cdbfbb; box-shadow: 0 4px 10px rgba(74,62,61,.06); }
-    .blog-index { margin-top: 42px; }
-    .blog-index h2 { margin: 0 0 8px; color: #4A3E3D; font-size: 22px; }
-    .blog-index-intro { margin: 0 0 18px; color: #777; font-size: 14px; line-height: 1.6; }
-    .blog-link-list { display: grid; gap: 10px; }
-    .blog-link { display: block; padding: 14px 16px; border: 1px solid #eee7e4; border-radius: 14px; background: #fff; color: #4A3E3D; text-decoration: none; font-size: 14px; font-weight: 700; line-height: 1.45; }
-    .blog-link:hover { border-color: #cdbfbb; box-shadow: 0 4px 10px rgba(74,62,61,.06); }
-    .blog-index { margin-top: 42px; }
-    .blog-index h2 { margin: 0 0 8px; color: #4A3E3D; font-size: 22px; }
-    .blog-index-intro { margin: 0 0 18px; color: #777; font-size: 14px; line-height: 1.6; }
-    .blog-link-list { display: grid; gap: 10px; }
-    .blog-link { display: block; padding: 14px 16px; border: 1px solid #eee7e4; border-radius: 14px; background: #fff; color: #4A3E3D; text-decoration: none; font-size: 14px; font-weight: 700; line-height: 1.45; }
-    .blog-link:hover { border-color: #cdbfbb; box-shadow: 0 4px 10px rgba(74,62,61,.06); }
   </style>
 </head>
 <body>
@@ -119,43 +102,14 @@
       </p>
     </div>
 
-    <div class="chip-container">
+    <div class="chip-container" tabindex="0" aria-label="메인 메뉴. 가로로 스크롤할 수 있습니다.">
       <button onclick="setCategory('template')" id="tab-template" class="chip active">📂 노션 템플릿</button>
       <button onclick="setCategory('deco')" id="tab-deco" class="chip inactive">✨ 노션 꾸미기 세트</button>
+      <a href="blog/index.html" class="chip inactive">📝 블로그 글</a>
+      <a href="about.html" class="chip inactive">👋 로라티콘 소개</a>
     </div>
 
     <div class="card-grid" id="itemGrid"></div>
-    <section class="blog-index" aria-labelledby="blog-index-title">
-      <h2 id="blog-index-title">네이버 블로그 글 모아보기</h2>
-      <p class="blog-index-intro">노션 템플릿 제작기와 사용법을 글별 소개 페이지에서 찾아보세요.</p>
-      <div class="blog-link-list">
-      <a class="blog-link" href="blog/224171419811.html">100일 챌린지 갤러리 커버 이미지 자동으로 변경하기</a>
-      <a class="blog-link" href="blog/224104425685.html">가벼운 일기쓰기의 시작 데일리 픽 템플릿 사용법</a>
-      <a class="blog-link" href="blog/224142663333.html">가볍지만 꾸준히 쓸 수 있는 행복 수집 노트 제작기</a>
-      <a class="blog-link" href="blog/224142513889.html">간단하게 작성할 수 있는 감사 일기 템플릿, 행복 줍줍 노트</a>
-      <a class="blog-link" href="blog/224174011129.html">노션 100일 챌린지 템플릿 무료 공유 및 사용법</a>
-      <a class="blog-link" href="blog/224084600914.html">노션 갤러리 보기에 썸네일 설정하기</a>
-      <a class="blog-link" href="blog/224179727123.html">노션 관계형과 롤업 속성 차이점 쉽게 이해하기</a>
-      <a class="blog-link" href="blog/224181261344.html">노션 꾸미기 세트｜ 몽글몽글 스노우 데이 테마 구성 소개</a>
-      <a class="blog-link" href="blog/224147276191.html">노션 꾸미기 세트｜ 행복 줍줍 노트 테마 구성 소개</a>
-      <a class="blog-link" href="blog/224236679330.html">노션 꾸미기 세트｜벚꽃 가득한 봄꽃 하늘 테마 구성 소개</a>
-      <a class="blog-link" href="blog/224182338381.html">노션 꾸미기 세트｜체리 데이 다이어리 테마 구성 소개</a>
-      <a class="blog-link" href="blog/224095563037.html">노션 루틴 계획표 사용 후기 | 요즘 실천 중인 습관들</a>
-      <a class="blog-link" href="blog/224036403226.html">노션 루틴계획표 만들기 1 - 기획과정</a>
-      <a class="blog-link" href="blog/224048247296.html">노션 루틴계획표 만들기 2 - 버튼 기능으로 자동화하기</a>
-      <a class="blog-link" href="blog/224077562536.html">노션 커스텀 아이콘 추가하기</a>
-      <a class="blog-link" href="blog/224062685069.html">노션 투두리스트 템플릿 무료 공유 사용법</a>
-      <a class="blog-link" href="blog/224195370000.html">대학원생과 연구생을 위한 노션 템플릿 만들기</a>
-      <a class="blog-link" href="blog/224201366615.html">쉽고 간단한 나만의 투두리스트 만들기</a>
-      <a class="blog-link" href="blog/224195390190.html">연구생의 피드백 반영 및 개선 과정</a>
-      <a class="blog-link" href="blog/224131656960.html">연말결산으로 한 해를 차분히 정리하기</a>
-      <a class="blog-link" href="blog/224202408966.html">열 나누기 하는 방법과 주의점</a>
-      <a class="blog-link" href="blog/224164956256.html">작심삼일 끝! 성취감이 눈에 보이는 100일 챌린지 템플릿 제작기</a>
-      <a class="blog-link" href="blog/224156987727.html">템플릿 사용 후기｜새로운 도전과 소소한 행복 일기</a>
-      <a class="blog-link" href="blog/224060963290.html">프로젝트 단위로 관리하는 할일 목록 템플릿 제작기</a>
-      <a class="blog-link" href="blog/224102654008.html">피드 뷰 기능 활용법 총정리</a>
-      </div>
-    </section>
 
   </div>
 
@@ -338,6 +292,58 @@
 
     // 변경된 부분: 단순 renderGrid() 대신, 저장된 카테고리 탭 버튼 색상까지 맞춰주기 위해 setCategory()를 호출합니다.
     setCategory(currentCategory);
+
+    const chipContainer = document.querySelector('.chip-container');
+    let isDraggingChips = false;
+    let chipDragMoved = false;
+    let chipDragStartX = 0;
+    let chipDragStartScroll = 0;
+
+    chipContainer.addEventListener('wheel', (event) => {
+      if (chipContainer.scrollWidth <= chipContainer.clientWidth) return;
+      if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+        event.preventDefault();
+        chipContainer.scrollLeft += event.deltaY;
+      }
+    }, { passive: false });
+
+    chipContainer.addEventListener('pointerdown', (event) => {
+      if (event.pointerType !== 'mouse' || event.button !== 0) return;
+      isDraggingChips = true;
+      chipDragMoved = false;
+      chipDragStartX = event.clientX;
+      chipDragStartScroll = chipContainer.scrollLeft;
+      chipContainer.classList.add('dragging');
+    });
+
+    chipContainer.addEventListener('pointermove', (event) => {
+      if (!isDraggingChips) return;
+      const distance = event.clientX - chipDragStartX;
+      if (Math.abs(distance) > 4) chipDragMoved = true;
+      chipContainer.scrollLeft = chipDragStartScroll - distance;
+    });
+
+    const finishChipDrag = (event) => {
+      if (!isDraggingChips) return;
+      isDraggingChips = false;
+      chipContainer.classList.remove('dragging');
+    };
+
+    window.addEventListener('pointerup', finishChipDrag);
+    window.addEventListener('pointercancel', finishChipDrag);
+    chipContainer.addEventListener('dragstart', (event) => event.preventDefault());
+    chipContainer.addEventListener('click', (event) => {
+      if (!chipDragMoved) return;
+      event.preventDefault();
+      event.stopPropagation();
+      chipDragMoved = false;
+    }, true);
+
+    chipContainer.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      chipContainer.scrollBy({ left: event.key === 'ArrowRight' ? 120 : -120, behavior: 'smooth' });
+    });
   
   </script>
 </body>
