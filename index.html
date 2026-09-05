@@ -234,11 +234,23 @@
         desc: '초록초록한 세잎클로버 테마 세트',
         image: './images/deco/collect-happiness2/collect-happiness2.webp',
         pageUrl: 'detail_collect_happiness2.html'
-       }
+       },
+      {
+        id: 14,
+        category: 'deco',
+        title: '모동숲 꾸미기 세트',
+        desc: '섬꾸하듯 노션을 꾸미는 무료 테마 세트',
+        image: './images/blog/224187825620.webp',
+        isFree: true,
+        pageUrl: 'detail_animal_crossing.html'
+      }
      ];
 
     // 변경된 부분: sessionStorage를 확인하여 마지막 상태를 불러옵니다. 없으면 'template' 적용.
-    let currentCategory = sessionStorage.getItem('lastCategory') || 'template';
+    const requestedCategory = new URLSearchParams(window.location.search).get('category');
+    let currentCategory = ['template', 'deco'].includes(requestedCategory)
+      ? requestedCategory
+      : (sessionStorage.getItem('lastCategory') || 'template');
 
     function setCategory(category) {
       currentCategory = category;
