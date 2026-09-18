@@ -54,8 +54,8 @@
     .naver-mark { display: grid; width: 22px; height: 22px; place-items: center; border-radius: 6px; background: #fff; color: #03C75A; font-size: 13px; font-weight: 950; }
     .filters { display: flex; gap: 8px; margin-bottom: 24px; padding-bottom: 5px; overflow-x: auto; scrollbar-width: none; }
     .filters::-webkit-scrollbar { display: none; }
-    .filter { flex: none; padding: 10px 15px; border: 0; border-radius: 22px; background: #F0EBE9; color: #817573; font: inherit; font-size: 13px; font-weight: 800; cursor: pointer; }
-    .filter[aria-pressed="true"] { background: #4A3E3D; color: #fff; }
+    .filter { flex: none; padding: 10px 15px; border: 0; border-radius: 22px; background: #F0EBE9; color: #817573; text-decoration: none; font: inherit; font-size: 13px; font-weight: 800; cursor: pointer; }
+    .filter[aria-current="page"] { background: #4A3E3D; color: #fff; }
     .result-summary { margin: 0 0 14px; color: #817573; font-size: 13px; }
     .post-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
     .post-card { min-width: 0; }
@@ -100,15 +100,15 @@
       </a>
     </header>
 
-    <div class="filters" role="group" aria-label="글 카테고리">
-      <button class="filter" type="button" data-filter="all" aria-pressed="true">전체</button>
-      <button class="filter" type="button" data-filter="basic" aria-pressed="false">노션 기초</button>
-      <button class="filter" type="button" data-filter="tips" aria-pressed="false">노션 꿀팁</button>
-      <button class="filter" type="button" data-filter="deco" aria-pressed="false">노션 꾸미기</button>
-      <button class="filter" type="button" data-filter="guide" aria-pressed="false">템플릿 사용법</button>
-      <button class="filter" type="button" data-filter="review" aria-pressed="false">템플릿 사용기</button>
-      <button class="filter" type="button" data-filter="behind" aria-pressed="false">제작 비하인드</button>
-    </div>
+    <nav class="filters" aria-label="글 카테고리">
+      <a class="filter" href="./" data-filter="all" aria-current="page">전체</a>
+      <a class="filter" href="?category=basic" data-filter="basic">노션 기초</a>
+      <a class="filter" href="?category=tips" data-filter="tips">노션 꿀팁</a>
+      <a class="filter" href="?category=deco" data-filter="deco">노션 꾸미기</a>
+      <a class="filter" href="?category=guide" data-filter="guide">템플릿 사용법</a>
+      <a class="filter" href="?category=review" data-filter="review">템플릿 사용기</a>
+      <a class="filter" href="?category=behind" data-filter="behind">제작 비하인드</a>
+    </nav>
 
     <p class="result-summary" aria-live="polite"><strong id="resultCount">46</strong>개의 글</p>
 
@@ -163,11 +163,11 @@
   </main>
 
   <script>
-    const buttons = [...document.querySelectorAll('.filter')];
+    const filters = [...document.querySelectorAll('.filter')];
     const cards = [...document.querySelectorAll('.post-card')];
     const resultCount = document.getElementById('resultCount');
 
-    const validFilters = new Set(buttons.map((button) => button.dataset.filter));
+    const validFilters = new Set(filters.map((filterLink) => filterLink.dataset.filter));
     const requestedFilter = new URLSearchParams(window.location.search).get('category');
     const savedFilter = sessionStorage.getItem('blogCategory');
     const initialFilter = validFilters.has(requestedFilter)
@@ -182,7 +182,10 @@
         card.hidden = !show;
         if (show) visible += 1;
       });
-      buttons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.filter === selectedFilter)));
+      filters.forEach((filterLink) => {
+        if (filterLink.dataset.filter === selectedFilter) filterLink.setAttribute('aria-current', 'page');
+        else filterLink.removeAttribute('aria-current');
+      });
       resultCount.textContent = visible;
       sessionStorage.setItem('blogCategory', selectedFilter);
 
@@ -194,7 +197,11 @@
       }
     }
 
-    buttons.forEach((button) => button.addEventListener('click', () => applyFilter(button.dataset.filter)));
+    filters.forEach((filterLink) => filterLink.addEventListener('click', (event) => {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      applyFilter(filterLink.dataset.filter);
+    }));
     applyFilter(initialFilter, Boolean(requestedFilter));
   </script>
 </body>
