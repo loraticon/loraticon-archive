@@ -110,7 +110,7 @@
   <div class="app-container">
     
     <div class="profile-section">
-      <img src="./images/profile/loraticon.webp" onerror="this.src='https://via.placeholder.com/150'" alt="프로필" class="profile-img">
+<img width="500" height="500" loading="eager" fetchpriority="high" decoding="async" src="./images/profile/loraticon.webp" onerror="this.src='https://via.placeholder.com/150'" alt="프로필" class="profile-img">
       <h1 class="profile-name">로라티콘 아카이브</h1>
       <p class="profile-desc">
         평범한 노션을 나만의 특별한 공간으로 만들어 보세요.
@@ -323,7 +323,7 @@
         const cardHTML = `
           <a href="${item.pageUrl}" class="card">
             <div class="card-img-wrapper">
-              <img src="${item.image}" alt="${item.title}" class="card-img">
+<img width="1080" height="1080" loading="lazy" decoding="async" src="${item.image}" alt="${item.title}" class="card-img">
               ${priceBadgeHTML}
             </div>
             <span class="card-badge ${badgeClass}">${typeText}</span>
